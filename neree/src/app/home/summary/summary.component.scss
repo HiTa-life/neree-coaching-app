@@ -1,0 +1,43 @@
+:host{
+    float: left;
+    background-color: #006c8c;
+    color: white;
+    position: relative;
+    bottom : 20px;
+    margin:auto
+    
+
+}
+
+  ion-card{
+      width : 500px;
+      height:600px;
+      color:white
+      
+  }
+
+  .scroller{
+    width: 300px;
+    height: 100px;
+    overflow-y: scroll;
+    scrollbar-color: white green;
+    scrollbar-width: thin;
+  }
+
+  ion-card-title {
+color:white;
+font-weight: bold;
+
+  }
+
+  .inscrire{
+  border-radius:12px 0 12px 0;
+	background-color: white;
+	border:none;
+	color:#006c8c;
+	font:bold 12px Verdana;
+  padding:6px 6px 6px 6px;
+  margin : 5px 5px 5px 5px;  
+  position: absolute;
+  left:200px
+  }
