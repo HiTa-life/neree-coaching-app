@@ -13,6 +13,7 @@ import { SharedModule } from './shared/modules/shared/shared.module';
 import { LoginModule } from './home/login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AccountCreationModule } from './home/account-creation/account-creation.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     HomePageModule,
     LoginModule,
+    AccountCreationModule,
     SharedModule,
     PageNotFoundModule,
     ReactiveFormsModule,
