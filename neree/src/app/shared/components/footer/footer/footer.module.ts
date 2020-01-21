@@ -10,8 +10,7 @@ import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
     FooterComponent
   ],
   imports: [
-    CommonModule,
-    SharedModule
+    CommonModule
   ],
   exports:[
     FooterComponent

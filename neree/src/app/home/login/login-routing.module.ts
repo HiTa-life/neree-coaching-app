@@ -4,7 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
 
 const routes: Routes = [
-  { path: "login", component: LoginComponent }
+  { path: "login", component: LoginComponent,
+children: [
+  {
+    path: "", loadChildren: () => import("./my-account-page/account/account.module")
+    .then((mod) => mod.AccountModule)
+  },
+]
+}
 
 ];
 
@@ -13,6 +20,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
+  ], 
+  exports:[
+    RouterModule
   ]
 })
 export class LoginRoutingModule { }

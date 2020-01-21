@@ -10,8 +10,7 @@ import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
     HeaderComponent
   ],
   imports: [
-    CommonModule,
-    SharedModule
+    CommonModule
   ],
   exports:[
     HeaderComponent
