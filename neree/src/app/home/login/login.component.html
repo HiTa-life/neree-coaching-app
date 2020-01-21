@@ -1,7 +1,8 @@
+<app-header></app-header>
 <form [formGroup]="loginForm" (ngSubmit)="login()">
    <div class="form-group">
-    <label>Nom d'utilisateur</label>
-    <input type="text" class="form-control" formControlName="username">
+    <label>Email</label>
+    <input type="email" class="form-control" formControlName="email">
   </div>
   <div class="form-group">
     <label>Mot de passe</label>
@@ -11,3 +12,4 @@
 </form>
 
  <pre>{{ loginForm.value | json }}</pre> <!--Notez les petites techniques pour rendre les valeurs lisibles à l’écran : Le pipe json convertit un objet JavaScript en chaîne affichable, et la balise HTML <pre> préserve les sauts de ligne -->
+<app-footer></app-footer>

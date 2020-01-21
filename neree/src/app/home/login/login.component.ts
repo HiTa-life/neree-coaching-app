@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
     this.loginForm = this.fb.group({ //crée une instance de FormGroup
-      username: ['Jean'],//crée une instance de FormControle /'Jean' est la valeur par défaut du champ "username"
+      email: ['Jean'],//crée une instance de FormControle /'Jean' est la valeur par défaut du champ "username"
       password: ['1234'],//crée une instance de FormControle
     });
   }
