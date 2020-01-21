@@ -1,0 +1,38 @@
+<form [formGroup]="valueForm" (ngSubmit)="energyValue()">
+  <div class="form-group">
+   <label>Valeur</label>
+   <input type="text" class="form-control" formControlName="valueName">
+ </div>
+ <div class="form-group">
+   <label>Cotation actuelle</label>
+   <input type="number" class="form-control" formControlName="actuallyNotation">
+ </div>
+ <div class="form-group">
+  <label>Cotation attendue</label>
+  <input type="number" class="form-control" formControlName="expectedNotation">
+</div>
+<div class="form-group">
+  <label>Action 1</label>
+  <input type="text" class="form-control" formControlName="actionOne">
+</div>
+<div class="form-group">
+  <label>Action 2</label>
+  <input type="text" class="form-control" formControlName="actionTwo">
+</div>
+<div class="form-group">
+  <label>Action 3</label>
+  <input type="text" class="form-control" formControlName="actionThree">
+</div>
+<div class="form-group">
+  <label>Action 4</label>
+  <input type="text" class="form-control" formControlName="actionFour">
+</div>
+<div class="form-group">
+  <label>Action 5</label>
+  <input type="text" class="form-control" formControlName="actionFive">
+</div>
+
+ <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
+
+<pre>{{ valueForm.value | json }}</pre>

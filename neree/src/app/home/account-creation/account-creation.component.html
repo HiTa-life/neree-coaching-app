@@ -63,12 +63,12 @@
   </div>
 
 
-  <button type="submit" class="btn btn-primary">OK</button>
-  <button type="reset" class="btn btn-primary">Annuler</button>
-  <button type="button" class="btn btn-primary">Retour à la page d'accueil</button>
-
+  
 </form>
+<pre>{{ accountForm.value | json }}</pre> <!--Notez les petites techniques pour rendre les valeurs lisibles à l’écran : Le pipe json convertit un objet JavaScript en chaîne affichable, et la balise HTML <pre> préserve les sauts de ligne -->
+<button type="submit" class="btn btn-primary">OK</button>
+<button type="reset" class="btn btn-primary">Annuler</button>
+<button type="button" class="btn btn-primary"><a href="/home">Retour à la page d'accueil</a></button>
 
 
- <pre>{{ accountForm.value | json }}</pre> <!--Notez les petites techniques pour rendre les valeurs lisibles à l’écran : Le pipe json convertit un objet JavaScript en chaîne affichable, et la balise HTML <pre> préserve les sauts de ligne -->
 <app-footer></app-footer>
