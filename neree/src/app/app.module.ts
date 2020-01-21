@@ -14,7 +14,7 @@ import { LoginModule } from './home/login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountCreationModule } from './home/account-creation/account-creation.module';
-import { ValueModule } from './home/login/my-account-page/value/value.module';
+import { ValueModule } from './home/login/my-account-page/account/value/value.module';
 import { AccountModule } from './home/login/my-account-page/account/account.module';
 
 
@@ -31,7 +31,6 @@ import { AccountModule } from './home/login/my-account-page/account/account.modu
     LoginModule,
     AccountCreationModule,
     AccountModule,
-    ValueModule,
     SharedModule,
     PageNotFoundModule,
     ReactiveFormsModule,

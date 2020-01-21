@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/modules/shared/shared.module';
 import { HeaderModule } from '../shared/components/header/header/header.module';
 import { FooterModule } from '../shared/components/footer/footer/footer.module';
 import { HomeRoutingModule } from './home-routing.module';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HomeRoutingModule } from './home-routing.module';
     HomeRoutingModule,
     SloganModule,
     SummaryModule,
-    TeamModule,    
+    TeamModule,
+    LoginModule,    
     HeaderModule,
     FooterModule,
   ]

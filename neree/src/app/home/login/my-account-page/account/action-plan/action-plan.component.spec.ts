@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FooterAccountComponent } from './footer-account.component';
+import { ActionPlanComponent } from './action-plan.component';
 
-describe('FooterAccountComponent', () => {
-  let component: FooterAccountComponent;
-  let fixture: ComponentFixture<FooterAccountComponent>;
+describe('ActionPlanComponent', () => {
+  let component: ActionPlanComponent;
+  let fixture: ComponentFixture<ActionPlanComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterAccountComponent ],
+      declarations: [ ActionPlanComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FooterAccountComponent);
+    fixture = TestBed.createComponent(ActionPlanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
