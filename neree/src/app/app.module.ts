@@ -12,6 +12,7 @@ import { HomePageModule } from './home/home.module';
 import { SharedModule } from './shared/modules/shared/shared.module';
 import { LoginModule } from './home/login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     LoginModule,
     SharedModule,
     PageNotFoundModule,
+    ReactiveFormsModule,
     AppRoutingModule, 
     ],
   providers: [

@@ -1,13 +1,13 @@
-<ion-list>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+   <div class="form-group">
+    <label>Nom d'utilisateur</label>
+    <input type="text" class="form-control" formControlName="username">
+  </div>
+  <div class="form-group">
+    <label>Mot de passe</label>
+    <input type="password" class="form-control" formControlName="password">
+  </div>
+  <button type="submit" class="btn btn-primary">OK</button>
+</form>
 
-  <ion-item>
-    <ion-label fixed>Username</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label fixed>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
-
-</ion-list>
+ <pre>{{ loginForm.value | json }}</pre> <!--Notez les petites techniques pour rendre les valeurs lisibles à l’écran : Le pipe json convertit un objet JavaScript en chaîne affichable, et la balise HTML <pre> préserve les sauts de ligne -->
