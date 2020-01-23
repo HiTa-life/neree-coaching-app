@@ -1,4 +1,39 @@
-:host{
+#main-footer{
+    padding: 15px 0 5 px;
     background-color: black;
-    color: grey
+    color: rgba(0,0,0,.32);
+    vertical-align: baseline;
+    height: 70px;
+}
+
+.footer-info{
+padding-top: 15px;
+  color:whitesmoke;
+  text-align: center;
+}
+
+
+
+.facebook{
+    position: absolute;
+    right:150px;
+    width: 40px;
+    height:40px;
+    padding-top: 15px;
+}
+
+.linkedin{
+    position: absolute;
+    right:100px;
+    width: 40px;
+    height:40px;
+    padding-top: 15px;
+}
+
+.neree-coaching{
+    position: absolute;
+    right:55px;
+    width: 40px;
+    height:40px;
+    padding-top: 15px;
 }

@@ -1,5 +1,19 @@
-.search{
-    text-align: right;
+#home-header{
+    background-color: #006c8c;
+    height: 70px;
+    vertical-align: top;
+    color: whitesmoke;
+    text-decoration: none !important;
+}
+
+.logo{
     position: absolute;
+    left:10px;
     
 }
+
+.search{
+    position: absolute;
+    right: 50px
+}
+
