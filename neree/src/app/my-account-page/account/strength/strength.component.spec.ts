@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ValueComponent } from './value.component';
+import { StrengthComponent } from './strength.component';
 
 describe('ValueComponent', () => {
-  let component: ValueComponent;
-  let fixture: ComponentFixture<ValueComponent>;
+  let component: StrengthComponent;
+  let fixture: ComponentFixture<StrengthComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ValueComponent ],
+      declarations: [ StrengthComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ValueComponent);
+    fixture = TestBed.createComponent(StrengthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

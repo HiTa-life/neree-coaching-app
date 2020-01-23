@@ -10,6 +10,7 @@ import { HeaderModule } from '../shared/components/header/header/header.module';
 import { FooterModule } from '../shared/components/footer/footer/footer.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { LoginModule } from './login/login.module';
+import { AccountCreationModule } from './account-creation/account-creation.module';
 
 
 @NgModule({
@@ -23,9 +24,14 @@ import { LoginModule } from './login/login.module';
     SloganModule,
     SummaryModule,
     TeamModule,
-    LoginModule,    
+    LoginModule,
+    AccountCreationModule,    
     HeaderModule,
     FooterModule,
+  ],
+  exports:[
+    LoginModule,
+    AccountCreationModule
   ]
  
 })

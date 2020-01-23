@@ -6,7 +6,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HeaderModule } from 'src/app/shared/components/header/header/header.module';
 import { FooterModule } from 'src/app/shared/components/footer/footer/footer.module';
-import { AccountModule } from './my-account-page/account/account.module';
+
 
 
 @NgModule({
@@ -15,8 +15,6 @@ import { AccountModule } from './my-account-page/account/account.module';
   ],
   imports: [
     CommonModule,
-    SharedModule,
-    AccountModule,
     LoginRoutingModule,
     ReactiveFormsModule,
     HeaderModule,

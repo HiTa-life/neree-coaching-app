@@ -5,17 +5,18 @@ import { HomePage } from './home.page';
 
 
 const routes: Routes = [
- 
+
   {
     path: "home", component: HomePage,
     children: [
       {
         path: "", loadChildren: () => import('./login/login.module')
-        .then((mod) => mod.LoginModule)
+          .then((mod) => mod.LoginModule)
       },
+
       {
         path: "", loadChildren: () => import('./account-creation/account-creation.module')
-        .then((mod) => mod.AccountCreationModule)
+          .then((mod) => mod.AccountCreationModule)
       },
     ]
   }
@@ -26,7 +27,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })

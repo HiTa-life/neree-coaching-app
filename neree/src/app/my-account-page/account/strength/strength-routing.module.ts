@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { ActionPlanComponent } from './action-plan.component';
-
+import { StrengthComponent } from './strength.component';
 
 const routes: Routes = [
-  {path: "", component: ActionPlanComponent}
+  {path: "", component: StrengthComponent}
 ]
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, 
+    CommonModule,
     RouterModule.forChild(routes)
+  ], 
+  exports: [
+    RouterModule
   ]
 })
-export class ActionPlanRoutingModule { }
+export class StrengthRoutingModule { }

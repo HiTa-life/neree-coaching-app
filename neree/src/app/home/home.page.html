@@ -1,5 +1,6 @@
-
 <app-header></app-header>
+<ion-router-outlet></ion-router-outlet>
+
 <ion-content>
   
   <div text-center class="ion-padding">
@@ -11,7 +12,16 @@
   <app-summary></app-summary>
   <app-team></app-team>
 </div>
+<div class="login" style="display:inline-block">
+ 
+  <nav>
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+    <a routerLink="/account-creation" routerLinkActive="active">M'enregistrer</a>
+  </nav> 
+  <!-- <a href="/login">Login</a> -->
+</div>
 
 </ion-content>
+
 
 <app-footer></app-footer>

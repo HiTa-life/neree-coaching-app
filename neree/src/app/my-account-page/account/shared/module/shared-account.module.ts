@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderAccountModule } from '../components/header-account/header-account.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -8,10 +10,13 @@ import { HeaderAccountModule } from '../components/header-account/header-account
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, 
+    CommonModule,
+    ReactiveFormsModule, 
     HeaderAccountModule,
-  ],
+    IonicModule.forRoot()
+    ],
   exports:[
+    IonicModule,
     HeaderAccountModule,  
   ]
 })

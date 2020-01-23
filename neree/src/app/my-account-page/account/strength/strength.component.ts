@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-value',
-  templateUrl: './value.component.html',
-  styleUrls: ['./value.component.scss'],
+  selector: 'app-strength',
+  templateUrl: './strength.component.html',
+  styleUrls: ['./strength.component.scss'],
 })
-export class ValueComponent implements OnInit {
-valueForm: FormGroup;
+export class StrengthComponent implements OnInit {
+  strengthForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.valueForm = this.fb.group({
-      valueName: [],
+    this.strengthForm = this.fb.group({
+      strengthName: [],
       actuallyNotation: [],
       expectedNotation: [],
       actionOne: [],
@@ -24,7 +24,7 @@ valueForm: FormGroup;
     });
   }
 energyValue(){
-  console.log('Données du formulaire...', this.valueForm.value)
+  console.log('Données du formulaire...', this.strengthForm.value)
 }
 
 }

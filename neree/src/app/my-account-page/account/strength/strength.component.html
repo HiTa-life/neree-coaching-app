@@ -1,8 +1,9 @@
 <app-header-account></app-header-account>
-<form [formGroup]="valueForm" (ngSubmit)="energyValue()">
+
+<form [formGroup]="strengthForm" (ngSubmit)="energyValue()">
   <div class="form-group">
    <label>Valeur</label>
-   <input type="text" class="form-control" formControlName="valueName">
+   <input type="text" class="form-control" formControlName="strengthName">
  </div>
  <div class="form-group">
    <label>Cotation actuelle</label>
@@ -36,6 +37,6 @@
  <button type="submit" class="btn btn-primary">Enregistrer</button>
 </form>
 
-<pre>{{ valueForm.value | json }}</pre>
+<pre>{{ strengthForm.value | json }}</pre>
 
 <app-footer></app-footer>
