@@ -9,6 +9,7 @@ import { ActionPlanComponent } from './my-account-page/account/action-plan/actio
 import { LoginComponent } from './home/login/login.component';
 import { AccountCreationComponent } from './home/account-creation/account-creation.component';
 import { ObjectiveComponent } from './my-account-page/account/objective/objective.component';
+import { CalendarComponent } from './my-account-page/account/calendar/calendar.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
     {path:'account/strength', component: StrengthComponent},
     {path:'account/action-plan', component: ActionPlanComponent},
     {path:'account/objective', component: ObjectiveComponent},
+    {path:'account/calendar', component: CalendarComponent},
     {path: "**", component:PageNotFoundComponent}
   
 ];

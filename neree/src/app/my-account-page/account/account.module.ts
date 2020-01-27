@@ -8,6 +8,7 @@ import { StrengthModule } from './strength/strength.module';
 import { ActionPlanModule } from './action-plan/action-plan.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ObjectiveModule } from './objective/objective.module';
+import { CalendarModule } from './calendar/calendar.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ObjectiveModule } from './objective/objective.module';
     StrengthModule, 
     ActionPlanModule,
     ObjectiveModule,
+    CalendarModule,
     ReactiveFormsModule,
     AccountRoutingModule,
   ],

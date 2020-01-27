@@ -19,6 +19,10 @@ const routes: Routes = [
         path: "", loadChildren: () => import("./objective/objective.module")
           .then((mod) => mod.ObjectiveModule)
       },
+      {
+        path: "", loadChildren: () => import("./calendar/calendar.module")
+          .then((mod) => mod.CalendarModule)
+      },
     ]
   }
 ]
