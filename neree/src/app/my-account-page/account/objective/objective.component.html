@@ -1,3 +1,98 @@
-<p>
-  objective works!
-</p>
+<app-header-account></app-header-account>
+<div class="card m-3">
+  <h3 class="card-header">Mon Objectif</h3>
+  <div class="card-body">
+    <form [formGroup]="objectiveForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col">
+          <div class="form-group">
+            <label style="margin-right: 5px">Numéro</label>
+            <input type="text" class="form-control" formControlName="num"
+              [ngClass]="{ 'is-invalid': submitted && f.num.errors }" />
+            <div *ngIf="submitted && f.num.errors" class="invalid-feedback">
+              <div *ngIf="f.num.errors.required">Champs obligatoire</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label style="margin-right: 5px">Titre de l'objectif</label>
+            <input type="text" class="form-control" formControlName="objectiveTitle"
+              [ngClass]="{ 'is-invalid': submitted && f.objectiveTitle.errors }" />
+            <div *ngIf="submitted && f.objectiveTitle.errors" class="invalid-feedback">
+              <div *ngIf="f.objectiveTitle.errors.required">Champs obligatoire</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Description</label>
+        <input type="tel" class="form-control" formControlName="description"
+          [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+          <div *ngIf="f.description.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Date de début</label>
+        <input type="date" class="form-control" formControlName="beginningDate"
+          [ngClass]="{ 'is-invalid': submitted && f.beginningDate.errors }" />
+        <div *ngIf="submitted && f.beginningDate.errors" class="invalid-feedback">
+          <div *ngIf="f.beginningDate.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Estimation de la date de fin</label>
+        <input type="date" class="form-control" formControlName="endDate"/>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Quel est le titre de sa valeur énergie ?
+          <a href="account/strength">Mes valeurs énergie</a>
+        </label>
+        <input type="text" class="form-control" formControlName="strengthTitle"
+          [ngClass]="{ 'is-invalid': submitted && f.strengthTitle.errors }" />
+        <div *ngIf="submitted && f.strengthTitle.errors" class="invalid-feedback">
+          <div *ngIf="f.strengthTitle.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Quel est le titre de son plan d'actions ?
+          <a href="account/action-plan">Mon Plan d'Actions</a>
+        </label>
+        <input type="text" class="form-control" formControlName="actionPlanTitle"
+          [ngClass]="{ 'is-invalid': submitted && f.actionPlanTitle.errors }" />
+        <div *ngIf="submitted && f.actionPlanTitle.errors" class="invalid-feedback">
+          <div *ngIf="f.actionPlanTitle.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Quels sont les obstacles possibles pouvant freiner cet objectifs ?</label>
+        <input type="text" class="form-control" formControlName="obstacles">
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Comment vais-je les contourner ? </label>
+        <input type="text" class="form-control" formControlName="bypass">
+      </div>
+
+      <div class="buttons" style="margin-left:200px">
+        <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
+        <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<pre>{{ objectiveForm.value | json }}</pre>
+
+<button type="button" class="return-button"><a href="/account"
+    style="color: white; text-decoration: none; font-weight: bold;">Retour à la page Mon Compte</a></button>
+
+
+<app-footer></app-footer>
