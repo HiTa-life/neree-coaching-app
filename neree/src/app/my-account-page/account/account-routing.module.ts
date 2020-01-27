@@ -15,6 +15,10 @@ const routes: Routes = [
         path: "", loadChildren: () => import("./action-plan/action-plan.module")
           .then((mod) => mod.ActionPlanModule)
       },
+      {
+        path: "", loadChildren: () => import("./objective/objective.module")
+          .then((mod) => mod.ObjectiveModule)
+      },
     ]
   }
 ]

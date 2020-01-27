@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 import { StrengthModule } from './strength/strength.module';
 import { ActionPlanModule } from './action-plan/action-plan.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ObjectiveModule } from './objective/objective.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedAccountModule,
     StrengthModule, 
     ActionPlanModule,
+    ObjectiveModule,
     ReactiveFormsModule,
     AccountRoutingModule,
   ],

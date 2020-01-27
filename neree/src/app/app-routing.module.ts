@@ -8,6 +8,7 @@ import { StrengthComponent } from './my-account-page/account/strength/strength.c
 import { ActionPlanComponent } from './my-account-page/account/action-plan/action-plan.component';
 import { LoginComponent } from './home/login/login.component';
 import { AccountCreationComponent } from './home/account-creation/account-creation.component';
+import { ObjectiveComponent } from './my-account-page/account/objective/objective.component';
 
 
 const routes: Routes = [
@@ -17,8 +18,9 @@ const routes: Routes = [
     {path: 'home/account-creation', component: AccountCreationComponent},
     {path: 'account', component: AccountComponent },
     {path:'account/strength', component: StrengthComponent},
-    {path:'account/action-plan', component: ActionPlanComponent}
-    // {path: "**", component:PageNotFoundComponent}
+    {path:'account/action-plan', component: ActionPlanComponent},
+    {path:'account/objective', component: ObjectiveComponent},
+    {path: "**", component:PageNotFoundComponent}
   
 ];
 

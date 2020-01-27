@@ -7,7 +7,6 @@ import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 import { SharedAccountModule } from '../shared/module/shared-account.module';
 
 
-
 @NgModule({
   declarations: [
     ActionPlanComponent
@@ -16,8 +15,8 @@ import { SharedAccountModule } from '../shared/module/shared-account.module';
     CommonModule,
     ActionPlanRoutingModule,
     ReactiveFormsModule,
+    SharedAccountModule,
     SharedModule,
-    SharedAccountModule
   ]
 })
 export class ActionPlanModule { }
