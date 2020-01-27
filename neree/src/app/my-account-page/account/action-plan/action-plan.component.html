@@ -1,81 +1,92 @@
 <app-header-account></app-header-account>
-<form [formGroup]="actionPlanForm" (ngSubmit)="actionPlan()">
-  <div class="form-group">
-   <label>N° :</label>
-   <input type="number" class="form-control" formControlName="num">
- </div>
- <div class="form-group">
-   <label>Titre de l'action :</label>
-   <input type="text" class="form-control" formControlName="titleAction">
- </div>
- <div class="form-group">
-  <label>Descriptif :</label>
-  <input type="text" class="form-control" formControlName="description">
-</div>
-<div class="form-group">
-  <label>Qu'est-ce que cette action a de positif dans l'atteinte de mon idéectif ?</label>
-  <input type="text" class="form-control" formControlName="positiveObjective">
-</div>
-<div class="form-group">
-  <label>Date de démarrage :</label>
-  <input type="date" class="form-control" formControlName="beginningDate">
-</div>
-<div class="form-group">
-  <label>Date de fin :</label>
-  <input type="date" class="form-control" formControlName="endDate">
-</div>
-<div class="form-group">
-  <label>Comment l'action peut-être la plus efficace possible ?</label>
-  <input type="text" class="form-control" formControlName="efficienceAction">
-</div>
-<div class="form-group">
-  <label>Résultat attendu :</label>
-  <input type="text" class="form-control" formControlName="expectedResult">
-</div>
-<p>Validation de mon action :</p>
-  <div>
-    <input type="radio" id="specific" name="specific" value="specific" formControlName="specificAction">
-    <label for="specific">Spécifique</label>
+<div class="card m-3">
+  <h3 class="card-header">Mon Plan d'Actions</h3>
+  <div class="card-body">
+    <form [formGroup]="actionPlanForm" (ngSubmit)="actionPlan()">
+      <div class="form-group">
+        <label style="margin-right: 5px">N° :</label>
+        <input type="number" class="form-control" formControlName="num">
+      </div>
+      <div class="form-group">
+        <label style="margin-right: 5px">Titre de l'action :</label>
+        <input type="text" class="form-control" formControlName="titleAction">
+      </div>
+      <div class="form-group">
+        <label style="margin-right: 5px">Descriptif :</label>
+        <input type="text" class="form-control" formControlName="description">
+      </div>
+      <div class="form-group">
+        <label style="margin-right: 5px">Qu'est-ce que cette action a de positif dans l'atteinte de mon idéectif ?</label>
+        <input type="text" class="form-control" formControlName="positiveObjective">
+      </div>
+      <div class="form-group">
+        <label style="margin-right: 5px">Date de démarrage :</label>
+        <input type="date" class="form-control" formControlName="beginningDate">
+      </div>
+      <div class="form-group">
+        <label style="margin-right: 5px">Date de fin :</label>
+        <input type="date" class="form-control" formControlName="endDate">
+      </div>
+      <div class="form-group">
+        <label style="margin-right: 5px">Comment l'action peut-être la plus efficace possible ?</label>
+        <input type="text" class="form-control" formControlName="efficienceAction">
+      </div>
+      <div class="form-group">
+        <label style="margin-right: 5px">Résultat attendu :</label>
+        <input type="text" class="form-control" formControlName="expectedResult">
+      </div>
+      <p>Validation de mon action :</p>
+      <div>
+        <input type="radio" id="specific" name="specific" value="specific" formControlName="specificAction">
+        <label for="specific">Spécifique</label>
 
-    <input type="radio" id="mesurable" name="mesurable" value="mesurable" formControlName="mesurableAction">
-    <label for="mesurable">Mesurable</label>
+        <input type="radio" id="mesurable" name="mesurable" value="mesurable" formControlName="mesurableAction">
+        <label for="mesurable">Mesurable</label>
 
-    <input type="radio" id="motivating" name="motivating" value="motivating" formControlName="motivatingAction">
-    <label for="motivating">Motivante</label>
+        <input type="radio" id="motivating" name="motivating" value="motivating" formControlName="motivatingAction">
+        <label for="motivating">Motivante</label>
 
-    <input type="radio" id="ecologic" name="ecologic" value="ecologic" formControlName="ecologicAction">
-    <label for="ecologic">Ecologique</label>
+        <input type="radio" id="ecologic" name="ecologic" value="ecologic" formControlName="ecologicAction">
+        <label for="ecologic">Ecologique</label>
 
-    <input type="radio" id="positive" name="positive" value="positive" formControlName="positiveAction">
-    <label for="positive">Positive</label>
+        <input type="radio" id="positive" name="positive" value="positive" formControlName="positiveAction">
+        <label for="positive">Positive</label>
 
-    <input type="radio" id="realizable" name="realizable" value="realizable" formControlName="realizableAction">
-    <label for="realizable">Réalisable</label>    
+        <input type="radio" id="realizable" name="realizable" value="realizable" formControlName="realizableAction">
+        <label for="realizable">Réalisable</label>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Quelles sont mes resources internes :</label>
+        <input type="text" class="form-control" formControlName="internalResources">
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Quelles sont mes resources externes :</label>
+        <input type="text" class="form-control" formControlName="externalResources">
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Quels sont les obstacles possibles pouvant freiner cette action :</label>
+        <input type="text" class="form-control" formControlName="obstacles">
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Comment vais-je les contourner :</label>
+        <input type="text" class="form-control" formControlName="deflectObstacles">
+      </div>
+
+      <div class="buttons" style="margin-left:120px">
+        <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
+        <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
+        <button class="submit-button" (click)="onSubmit()">Mettre à jour</button>
+      </div>
+    </form>
   </div>
-
-  <div class="form-group">
-    <label>Quelles sont mes resources internes :</label>
-    <input type="text" class="form-control" formControlName="internalResources">
-  </div>
-
-  <div class="form-group">
-    <label>Quelles sont mes resources externes :</label>
-    <input type="text" class="form-control" formControlName="externalResources">
-  </div>
-
-  <div class="form-group">
-    <label>Quels sont les obstacles possibles pouvant freiner cette action :</label>
-    <input type="text" class="form-control" formControlName="obstacles">
-  </div>
-
-  <div class="form-group">
-    <label>Comment vais-je les contourner :</label>
-    <input type="text" class="form-control" formControlName="deflectObstacles">
-  </div>
-
- <button type="submit" class="btn btn-primary">Enregistrer</button>
-</form>
+</div>
 
 <pre>{{ actionPlanForm.value | json }}</pre>
+<button type="button" class="return-button"><a href="/account"
+  style="color: white; text-decoration: none; font-weight: bold;">Retour à la page Mon Compte</a></button>
 
 <app-footer></app-footer>

@@ -8,11 +8,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class StrengthComponent implements OnInit {
   strengthForm: FormGroup;
+  submitted = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private formb: FormBuilder) { }
 
   ngOnInit() {
-    this.strengthForm = this.fb.group({
+    this.strengthForm = this.formb.group({
       strengthName: [],
       actuallyNotation: [],
       expectedNotation: [],
@@ -23,8 +24,23 @@ export class StrengthComponent implements OnInit {
       actionFive: [], 
     });
   }
-energyValue(){
-  console.log('Données du formulaire...', this.strengthForm.value)
+  get f() { return this.strengthForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.strengthForm.invalid) {
+        return;
+    }
+
+    // display form values on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.strengthForm.value, null, 4));
+}
+
+onReset() {
+    this.submitted = false;
+    this.strengthForm.reset();
 }
 
 }

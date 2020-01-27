@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
@@ -10,21 +9,36 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  submitted = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private formb: FormBuilder) { }
 
   ngOnInit() {
 
-    this.loginForm = this.fb.group({ //crée une instance de FormGroup
-      email: ['Jean'],//crée une instance de FormControle /'Jean' est la valeur par défaut du champ "username"
-      password: ['1234'],//crée une instance de FormControle
+    this.loginForm = this.formb.group({ //crée une instance de FormGroup
+      email: ['',Validators.required],//crée une instance de FormControle /'Jean' est la valeur par défaut du champ "username"
+      password: ['',Validators.required],//crée une instance de FormControle
+      acceptTerms: [false, Validators.requiredTrue]
     });
   }
+  
+  get f() { return this.loginForm.controls; }
 
-  login(){
-    // this.loginForm.get('username')
-    //this.loginForm.get('password')
-    console.log('Données du formulaire...',this.loginForm.value);
-  }
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+        return;
+    }
+
+    // display form values on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
+}
+
+onReset() {
+    this.submitted = false;
+    this.loginForm.reset();
+}
 
 }

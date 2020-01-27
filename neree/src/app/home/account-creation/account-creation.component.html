@@ -1,74 +1,138 @@
 <app-header></app-header>
+<div class="card m-3">
+  <h3 class="card-header">Formulaire d'inscription</h3>
+  <div class="card-body">
+    <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col">
+          <div class="form-group">
+            <label style="margin-right: 5px">Nom</label>
+            <input type="text" class="form-control" formControlName="name"
+              [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Champs obligatoire</div>
+            </div>
+          </div>
 
-<form [formGroup]="accountForm" (ngSubmit)="account()">
-   
-  <div class="form-group">
-    <label>Nom</label>
-    <input type="text" class="form-control" formControlName="name">
+          <div class="form-group">
+            <label style="margin-right: 5px">Prénom</label>
+            <input type="text" class="form-control" formControlName="surname"
+              [ngClass]="{ 'is-invalid': submitted && f.surname.errors }" />
+            <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+              <div *ngIf="f.surname.errors.required">Champs obligatoire</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Téléphone</label>
+        <input type="tel" class="form-control" formControlName="phone"
+          [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+          <div *ngIf="f.phone.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Mail</label>
+        <input type="text" class="form-control" formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Champs obligatoire</div>
+          <div *ngIf="f.email.errors.email">Email doit être une adresse mail valide</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Fonction</label>
+        <input type="text" class="form-control" formControlName="function"
+          [ngClass]="{ 'is-invalid': submitted && f.function.errors }" />
+        <div *ngIf="submitted && f.function.errors" class="invalid-feedback">
+          <div *ngIf="f.function.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Nom de la société</label>
+        <input type="text" class="form-control" formControlName="nameSociety"
+          [ngClass]="{ 'is-invalid': submitted && f.nameSociety.errors }" />
+        <div *ngIf="submitted && f.nameSociety.errors" class="invalid-feedback">
+          <div *ngIf="f.nameSociety.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Adresse de la société</label>
+        <input type="text" class="form-control" formControlName="addressSociety">
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Téléphone de la société</label>
+        <input type="tel" class="form-control" formControlName="phoneSociety">
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Suivi part (Nom du coach)</label>
+        <input type="text" class="form-control" formControlName="coachName"
+          [ngClass]="{ 'is-invalid': submitted && f.coachName.errors }" />
+        <div *ngIf="submitted && f.coachName.errors" class="invalid-feedback">
+          <div *ngIf="f.coachName.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Date de début de la formation</label>
+        <input type="date" class="form-control" formControlName="coachingBeginning"
+          [ngClass]="{ 'is-invalid': submitted && f.coachingBeginning.errors }" />
+        <div *ngIf="submitted && f.coachingBeginning.errors" class="invalid-feedback">
+          <div *ngIf="f.coachingBeginning.errors.required">Champs obligatoire</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Mot de passe</label>
+        <input type="password" class="form-control" formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Champs obligatoire</div>
+          <div *ngIf="f.password.errors.minlength">Le mot de passe doit contenir au moins 6 caractères</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-right: 5px">Confirmation du mot de passe</label>
+        <input type="password" class="form-control" formControlName="confirmPassword"
+          [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+          <div *ngIf="f.confirmPassword.errors.required">Champs obligatoire</div>
+          <div *ngIf="f.confirmPassword.errors.minlength">Le mot de passe doit correspondre</div>
+        </div>
+      </div>
+
+      <div class="form-group form-check" style="margin-right: 5px">
+        <input style="margin-right: 5px" type="checkbox" formControlName="acceptTerms" id="acceptTerms"
+          class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+        <label style="margin-right: 5px" for="acceptTerms" class="form-check-label">J'accepte que mes données soient
+          transférées à
+          Nérée-Coaching le temps de l'exécution de mon plan d'actions</label>
+        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Confirmation obligatoire</div>
+      </div>
+
+      <div class="buttons" style="margin-left:200px">
+        <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
+        <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
+      </div>
+
+
+    </form>
   </div>
+</div>
 
-  <div class="form-group">
-    <label>Prenom</label>
-    <input type="text" class="form-control" formControlName="surname">
-  </div>
+<pre>{{ accountForm.value | json }}</pre>
 
-  <div class="form-group">
-    <label>Téléphone</label>
-    <input type="tel" class="form-control" formControlName="phone">
-  </div>
-
-  <div class="form-group">
-    <label>Mail</label>
-    <input type="password" class="form-control" formControlName="email">
-  </div>
-
-  <div class="form-group">
-    <label>Fonction</label>
-    <input type="text" class="form-control" formControlName="function">
-  </div>
-
-  <div class="form-group">
-    <label>Nom de la société</label>
-    <input type="text" class="form-control" formControlName="nameSociety">
-  </div>
-
-  <div class="form-group">
-    <label>Adresse de la société</label>
-    <input type="text" class="form-control" formControlName="addressSociety">
-  </div>
-
-  <div class="form-group">
-    <label>Téléphone de la société</label>
-    <input type="tel" class="form-control" formControlName="phoneSociety">
-  </div>
-
-  <div class="form-group">
-    <label>Suivi part (Nom du coach)</label>
-    <input type="text" class="form-control" formControlName="coachName">
-  </div>
-
-  <div class="form-group">
-    <label>Date de début de la formation</label>
-    <input type="date" class="form-control" formControlName="coachingBeginning">
-  </div>
-
-  <div class="form-group">
-    <label>Mot de passe</label>
-    <input type="password" class="form-control" formControlName="password">
-  </div>
-
-  <div class="form-group">
-    <label>Confirmation du mot de passe</label>
-    <input type="password" class="form-control" formControlName="passwordValidation">
-  </div>
-
-
-  
-</form>
-<pre>{{ accountForm.value | json }}</pre> <!--Notez les petites techniques pour rendre les valeurs lisibles à l’écran : Le pipe json convertit un objet JavaScript en chaîne affichable, et la balise HTML <pre> préserve les sauts de ligne -->
-<button type="submit" class="btn btn-primary">OK</button>
-<button type="reset" class="btn btn-primary">Annuler</button>
-<button type="button" class="btn btn-primary"><a href="/home">Retour à la page d'accueil</a></button>
+<button type="button" class="return-button"><a href="/home"
+    style="color: white; text-decoration: none; font-weight: bold;">Retour à la page d'accueil</a></button>
 
 
 <app-footer></app-footer>

@@ -1,0 +1,47 @@
+.card-header{
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-body{
+    display: inline-flex;
+    width: 600px;
+    height: 500 px;
+    background-color: rgb(233,78,27);
+    margin-left:600px;
+    padding : 10px;
+    border:solid 1px black;
+}
+
+.form-group {
+    margin:10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.buttons{
+    border-radius: 5px;
+}
+
+.submit-button{
+    font-weight: bold;
+    height: 20px;
+    border-radius: 5px;
+    background: radial-gradient( white,#f69d3c);
+}
+
+.reset-button{
+    height: 20px;
+    border-radius: 5px;
+    background: radial-gradient( white,#f69d3c);
+}
+
+.return-button{
+    height: 50px;
+    width: 150px;
+    margin-bottom: 100px;
+    margin-left: 900px;
+    border-radius: 5px;
+    border: solid 1px rgb(233,78,27);
+    background-color: rgb(233,78,27);
+}
