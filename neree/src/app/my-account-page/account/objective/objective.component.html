@@ -16,10 +16,10 @@
 
           <div class="form-group">
             <label style="margin-right: 5px">Titre de l'objectif</label>
-            <input type="text" class="form-control" formControlName="objectiveTitle"
-              [ngClass]="{ 'is-invalid': submitted && f.objectiveTitle.errors }" />
-            <div *ngIf="submitted && f.objectiveTitle.errors" class="invalid-feedback">
-              <div *ngIf="f.objectiveTitle.errors.required">Champs obligatoire</div>
+            <input type="text" class="form-control" formControlName="objective_title"
+              [ngClass]="{ 'is-invalid': submitted && f.objective_title.errors }" />
+            <div *ngIf="submitted && f.objective_title.errors" class="invalid-feedback">
+              <div *ngIf="f.objective_title.errors.required">Champs obligatoire</div>
             </div>
           </div>
         </div>
@@ -36,26 +36,26 @@
 
       <div class="form-group">
         <label style="margin-right: 5px">Date de début</label>
-        <input type="date" class="form-control" formControlName="beginningDate"
-          [ngClass]="{ 'is-invalid': submitted && f.beginningDate.errors }" />
-        <div *ngIf="submitted && f.beginningDate.errors" class="invalid-feedback">
-          <div *ngIf="f.beginningDate.errors.required">Champs obligatoire</div>
+        <input type="date" class="form-control" formControlName="beginning_date"
+          [ngClass]="{ 'is-invalid': submitted && f.beginning_date.errors }" />
+        <div *ngIf="submitted && f.beginning_date.errors" class="invalid-feedback">
+          <div *ngIf="f.beginning_date.errors.required">Champs obligatoire</div>
         </div>
       </div>
 
       <div class="form-group">
         <label style="margin-right: 5px">Estimation de la date de fin</label>
-        <input type="date" class="form-control" formControlName="endDate"/>
+        <input type="date" class="form-control" formControlName="end_date"/>
       </div>
 
       <div class="form-group">
         <label style="margin-right: 5px">Quel est le titre de sa valeur énergie ?
           <a href="account/strength">Mes valeurs énergie</a>
         </label>
-        <input type="text" class="form-control" formControlName="strengthTitle"
-          [ngClass]="{ 'is-invalid': submitted && f.strengthTitle.errors }" />
-        <div *ngIf="submitted && f.strengthTitle.errors" class="invalid-feedback">
-          <div *ngIf="f.strengthTitle.errors.required">Champs obligatoire</div>
+        <input type="text" class="form-control" formControlName="strength_title"
+          [ngClass]="{ 'is-invalid': submitted && f.strength_title.errors }" />
+        <div *ngIf="submitted && f.strength_title.errors" class="invalid-feedback">
+          <div *ngIf="f.strength_title.errors.required">Champs obligatoire</div>
         </div>
       </div>
 
@@ -63,10 +63,10 @@
         <label style="margin-right: 5px">Quel est le titre de son plan d'actions ?
           <a href="account/action-plan">Mon Plan d'Actions</a>
         </label>
-        <input type="text" class="form-control" formControlName="actionPlanTitle"
-          [ngClass]="{ 'is-invalid': submitted && f.actionPlanTitle.errors }" />
-        <div *ngIf="submitted && f.actionPlanTitle.errors" class="invalid-feedback">
-          <div *ngIf="f.actionPlanTitle.errors.required">Champs obligatoire</div>
+        <input type="text" class="form-control" formControlName="action_plan_title"
+          [ngClass]="{ 'is-invalid': submitted && f.action_plan_title.errors }" />
+        <div *ngIf="submitted && f.action_plan_title.errors" class="invalid-feedback">
+          <div *ngIf="f.action_plan_title.errors.required">Champs obligatoire</div>
         </div>
       </div>
 

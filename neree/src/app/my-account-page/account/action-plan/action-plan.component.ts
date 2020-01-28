@@ -16,23 +16,23 @@ export class ActionPlanComponent implements OnInit {
   ngOnInit() {
     this.actionPlanForm = this.formb.group({
       num: [],
-      titleAction: [],
-      description: [],
-      positiveObjective: [],
-      beginningDate: [],
-      endDate: [],
-      efficienceAction: [],
-      expectedResult: [],
-      specificAction: [],
-      mesurableAction: [],
-      motivatingAction: [],
-      ecologicAction: [],
-      positiveAction: [],
-      realizableAction: [],
-      internalResources: [],
-      externalResources: [],
+      title_action: [],
+      description_objective: [],
+      positive_objective: [],
+      beginning_date: [],
+      end_date: [],
+      efficience_action: [],
+      expected_result: [],
+      specific_action: [],
+      mesurable_action: [],
+      motivating_action: [],
+      ecological_action: [],
+      positive_action: [],
+      realizable_action: [],
+      internal_resources: [],
+      external_resources: [],
       obstacles: [],
-      deflectObstacles: []
+      deflect_obstacles: []
     });
   }
   get f() { return this.actionPlanForm.controls; }

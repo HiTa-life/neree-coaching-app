@@ -14,14 +14,14 @@ export class StrengthComponent implements OnInit {
 
   ngOnInit() {
     this.strengthForm = this.formb.group({
-      strengthName: [],
-      actuallyNotation: [],
-      expectedNotation: [],
-      actionOne: [],
-      actionTwo: [],
-      actionThree: [],
-      actionFour: [],
-      actionFive: [], 
+      strength_name: [],
+      actually_notation: [],
+      expected_notation: [],
+      action_one: [],
+      action_two: [],
+      action_three: [],
+      action_four: [],
+      action_five: [], 
     });
   }
   get f() { return this.strengthForm.controls; }

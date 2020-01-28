@@ -15,12 +15,12 @@ submitted = false;
   ngOnInit() {
     this.objectiveForm = this.formb.group({
       num: ['', Validators.required],
-      objectiveTitle: ['', Validators.required],
+      objective_title: ['', Validators.required],
       description: ['', Validators.required],
-      beginningDate: ['', Validators.required],
-      endDate: [''],
-      strengthTitle: ['', Validators.required],
-      actionPlanTitle: ['',Validators.required],
+      beginning_date: ['', Validators.required],
+      end_Date: [''],
+      strength_title: ['', Validators.required],
+      action_plan_title: ['',Validators.required],
       obstacles: [''],
       bypass: [''],
     })

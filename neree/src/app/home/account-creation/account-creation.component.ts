@@ -17,17 +17,18 @@ export class AccountCreationComponent implements OnInit {
     this.accountForm = this.formb.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
+      role: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required, Validators.email],
       function: ['', Validators.required],
-      nameSociety: ['', Validators.required],
-      addressSociety: [''],
-      phoneSociety: [''],
-      coachName: ['', Validators.required],
-      coachingBeginning: ['', Validators.required],
+      name_society: ['', Validators.required],
+      address_society: [''],
+      phone_society: [''],
+      coach_name: [''],
+      coaching_beginning: [''],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue]
+      confirm_password: ['', Validators.required],
+      accept_terms: [false, Validators.requiredTrue]
     }, {
       validator: MustMatch('password', 'confirmPassword')
     });

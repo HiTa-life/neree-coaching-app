@@ -25,6 +25,16 @@
         </div>
       </div>
 
+      <div class="form-group form-check" style="margin-right: 5px">
+        <input style="margin-right: 5px" type="radio" formControlName="role" name="role"
+          class="form-radio-input" value="coachée" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
+        <label style="margin-right: 5px" for="coachée" class="form-check-label">coaché(e)</label>
+        <input style="margin-right: 5px" type="radio" formControlName="role" name="role"
+        class="form-radio-input" value="coach" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
+        <label style="margin-right: 5px" for="coach" class="form-check-label">coach</label>
+        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Confirmation obligatoire</div>
+      </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Téléphone</label>
         <input type="tel" class="form-control" formControlName="phone"
@@ -55,39 +65,31 @@
 
       <div class="form-group">
         <label style="margin-right: 5px">Nom de la société</label>
-        <input type="text" class="form-control" formControlName="nameSociety"
-          [ngClass]="{ 'is-invalid': submitted && f.nameSociety.errors }" />
-        <div *ngIf="submitted && f.nameSociety.errors" class="invalid-feedback">
-          <div *ngIf="f.nameSociety.errors.required">Champs obligatoire</div>
+        <input type="text" class="form-control" formControlName="name_society"
+          [ngClass]="{ 'is-invalid': submitted && f.name_society.errors }" />
+        <div *ngIf="submitted && f.name_society.errors" class="invalid-feedback">
+          <div *ngIf="f.name_society.errors.required">Champs obligatoire</div>
         </div>
       </div>
 
       <div class="form-group">
         <label style="margin-right: 5px">Adresse de la société</label>
-        <input type="text" class="form-control" formControlName="addressSociety">
+        <input type="text" class="form-control" formControlName="address_society">
       </div>
 
       <div class="form-group">
         <label style="margin-right: 5px">Téléphone de la société</label>
-        <input type="tel" class="form-control" formControlName="phoneSociety">
+        <input type="tel" class="form-control" formControlName="phone_society">
       </div>
 
       <div class="form-group">
         <label style="margin-right: 5px">Suivi part (Nom du coach)</label>
-        <input type="text" class="form-control" formControlName="coachName"
-          [ngClass]="{ 'is-invalid': submitted && f.coachName.errors }" />
-        <div *ngIf="submitted && f.coachName.errors" class="invalid-feedback">
-          <div *ngIf="f.coachName.errors.required">Champs obligatoire</div>
-        </div>
+        <input type="text" class="form-control" formControlName="coach_name">
       </div>
 
       <div class="form-group">
         <label style="margin-right: 5px">Date de début de la formation</label>
-        <input type="date" class="form-control" formControlName="coachingBeginning"
-          [ngClass]="{ 'is-invalid': submitted && f.coachingBeginning.errors }" />
-        <div *ngIf="submitted && f.coachingBeginning.errors" class="invalid-feedback">
-          <div *ngIf="f.coachingBeginning.errors.required">Champs obligatoire</div>
-        </div>
+        <input type="date" class="form-control" formControlName="coaching_beginning">
       </div>
 
       <div class="form-group">
@@ -102,21 +104,21 @@
 
       <div class="form-group">
         <label style="margin-right: 5px">Confirmation du mot de passe</label>
-        <input type="password" class="form-control" formControlName="confirmPassword"
-          [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-          <div *ngIf="f.confirmPassword.errors.required">Champs obligatoire</div>
-          <div *ngIf="f.confirmPassword.errors.minlength">Le mot de passe doit correspondre</div>
+        <input type="password" class="form-control" formControlName="confirm_password"
+          [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" />
+        <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+          <div *ngIf="f.confirm_password.errors.required">Champs obligatoire</div>
+          <div *ngIf="f.confirm_password.errors.minlength">Le mot de passe doit correspondre</div>
         </div>
       </div>
 
       <div class="form-group form-check" style="margin-right: 5px">
-        <input style="margin-right: 5px" type="checkbox" formControlName="acceptTerms" id="acceptTerms"
-          class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
-        <label style="margin-right: 5px" for="acceptTerms" class="form-check-label">J'accepte que mes données soient
+        <input style="margin-right: 5px" type="checkbox" formControlName="acceptTerms" id="accept_terms"
+          class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.accept_terms.errors }" />
+        <label style="margin-right: 5px" for="accept_terms" class="form-check-label">J'accepte que mes données soient
           transférées à
           Nérée-Coaching le temps de l'exécution de mon plan d'actions</label>
-        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Confirmation obligatoire</div>
+        <div *ngIf="submitted && f.accept_terms.errors" class="invalid-feedback">Confirmation obligatoire</div>
       </div>
 
       <div class="buttons" style="margin-left:200px">
