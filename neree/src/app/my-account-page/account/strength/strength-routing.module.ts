@@ -4,7 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { StrengthComponent } from './strength.component';
 
 const routes: Routes = [
-  {path: "", component: StrengthComponent}
+  
+  {path: "strength", component: StrengthComponent,
+}
 ]
 
 @NgModule({

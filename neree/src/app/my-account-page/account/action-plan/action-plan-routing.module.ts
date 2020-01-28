@@ -5,6 +5,7 @@ import { ActionPlanComponent } from './action-plan.component';
 
 
 const routes: Routes = [
+  
   { path: "", component: ActionPlanComponent }
 ]
 

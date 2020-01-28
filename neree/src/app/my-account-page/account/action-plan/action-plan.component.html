@@ -1,58 +1,68 @@
+
 <app-header-account></app-header-account>
 <div class="card m-3">
   <h3 class="card-header">Mon Plan d'Actions</h3>
   <div class="card-body">
-    <form [formGroup]="actionPlanForm" (ngSubmit)="actionPlan()">
+
+    <form [formGroup]="actionPlanForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label style="margin-right: 5px">N° :</label>
         <input type="number" class="form-control" formControlName="num">
       </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Titre de l'action :</label>
         <input type="text" class="form-control" formControlName="title_action">
       </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Descriptif :</label>
         <input type="text" class="form-control" formControlName="description_objective">
       </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Qu'est-ce que cette action a de positif dans l'atteinte de mon objectif ?</label>
         <input type="text" class="form-control" formControlName="positive_objective">
       </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Date de démarrage :</label>
         <input type="date" class="form-control" formControlName="beginning_date">
       </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Date de fin :</label>
         <input type="date" class="form-control" formControlName="end_date">
       </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Comment l'action peut-être la plus efficace possible ?</label>
         <input type="text" class="form-control" formControlName="efficience_action">
       </div>
+
       <div class="form-group">
         <label style="margin-right: 5px">Résultat attendu :</label>
         <input type="text" class="form-control" formControlName="expected_result">
       </div>
+
       <p>Validation de mon action :</p>
       <div>
-        <input type="radio"  name="expected_result" value="specific_action" formControlName="specific_action">
+        <input type="radio"  name="expected_result" value="specific_action" formControlName="expected_result">
         <label>Spécifique</label>
 
-        <input type="radio"  name="expected_result" value="mesurable_action" formControlName="mesurable_action">
+        <input type="radio"  name="expected_result" value="mesurable_action" formControlName="expected_result">
         <label >Mesurable</label>
 
-        <input type="radio"  name="expected_result" value="motivating_action" formControlName="motivating_action">
+        <input type="radio"  name="expected_result" value="motivating_action" formControlName="expected_result">
         <label>Motivante</label>
 
-        <input type="radio"  name="expected_result" value="ecological_action" formControlName="ecological_action">
+        <input type="radio"  name="expected_result" value="ecological_action" formControlName="expected_result">
         <label>Ecologique</label>
 
-        <input type="radio"  name="expected_result" value="positive_action" formControlName="positive_action">
+        <input type="radio"  name="expected_result" value="positive_action" formControlName="expected_result">
         <label>Positive</label>
 
-        <input type="radio"  name="expected_result" value="realizable_action" formControlName="realizable_action">
+        <input type="radio"  name="expected_result" value="realizable_action" formControlName="expected_result">
         <label>Réalisable</label>
       </div>
 

@@ -18,8 +18,8 @@ const routes: Routes = [
     {path: 'home/login', component: LoginComponent},
     {path: 'home/account-creation', component: AccountCreationComponent},
     {path: 'account', component: AccountComponent },
-    {path:'account/strength', component: StrengthComponent},
     {path:'account/action-plan', component: ActionPlanComponent},
+    {path:'account/strength', component: StrengthComponent},
     {path:'account/objective', component: ObjectiveComponent},
     {path:'account/calendar', component: CalendarComponent},
     {path: "**", component:PageNotFoundComponent}

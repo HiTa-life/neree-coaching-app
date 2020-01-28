@@ -11,6 +11,7 @@ import { FooterModule } from '../shared/components/footer/footer/footer.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { LoginModule } from './login/login.module';
 import { AccountCreationModule } from './account-creation/account-creation.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AccountCreationModule } from './account-creation/account-creation.modul
     AccountCreationModule,    
     HeaderModule,
     FooterModule,
+    AppRoutingModule
   ],
   exports:[
     LoginModule,

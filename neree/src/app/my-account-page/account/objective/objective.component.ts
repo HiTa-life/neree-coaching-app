@@ -18,7 +18,7 @@ submitted = false;
       objective_title: ['', Validators.required],
       description: ['', Validators.required],
       beginning_date: ['', Validators.required],
-      end_Date: [''],
+      end_date: [''],
       strength_title: ['', Validators.required],
       action_plan_title: ['',Validators.required],
       obstacles: [''],

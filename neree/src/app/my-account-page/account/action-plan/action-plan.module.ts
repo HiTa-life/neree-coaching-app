@@ -13,10 +13,10 @@ import { SharedAccountModule } from '../shared/module/shared-account.module';
   ],
   imports: [
     CommonModule,
-    ActionPlanRoutingModule,
     ReactiveFormsModule,
     SharedAccountModule,
     SharedModule,
+    ActionPlanRoutingModule,
   ]
 })
 export class ActionPlanModule { }

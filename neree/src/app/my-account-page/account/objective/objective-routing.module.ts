@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ObjectiveComponent } from './objective.component';
 
 const routes: Routes = [
+  {path: "objective", redirectTo: 'account/objective'},
   { path: "", component: ObjectiveComponent }
 ]
 
