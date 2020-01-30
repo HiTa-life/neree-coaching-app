@@ -10,6 +10,7 @@
   "author": "Hinda Talaron",
   "license": "Apache-2.0",
   "dependencies": {
+    "angular5-toaster": "^1.0.2",
     "ionic": "^5.4.15"
   }
 }

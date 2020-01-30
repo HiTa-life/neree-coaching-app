@@ -14,7 +14,6 @@ import { CalendarComponent } from './my-account-page/account/calendar/calendar.c
 
 const routes: Routes = [
   
-    {path: 'home', component: HomePage },
     {path: 'home/login', component: LoginComponent},
     {path: 'home/account-creation', component: AccountCreationComponent},
     {path: 'account', component: AccountComponent },
@@ -22,6 +21,7 @@ const routes: Routes = [
     {path:'account/strength', component: StrengthComponent},
     {path:'account/objective', component: ObjectiveComponent},
     {path:'account/calendar', component: CalendarComponent},
+    { path: '', component: HomePage },
     {path: "**", component:PageNotFoundComponent}
   
 ];
