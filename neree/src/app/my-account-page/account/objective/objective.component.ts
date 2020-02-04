@@ -13,16 +13,15 @@ submitted = false;
   constructor(private formb: FormBuilder) { }
 
   ngOnInit() {
-    this.objectiveForm = this.formb.group({
-      num: ['', Validators.required],
-      objective_title: ['', Validators.required],
-      description: ['', Validators.required],
+    this.objectiveForm = this.formb.group({      
+      objective_title: ['', Validators.required],     
       beginning_date: ['', Validators.required],
-      end_date: [''],
-      strength_title: ['', Validators.required],
-      action_plan_title: ['',Validators.required],
-      obstacles: [''],
-      bypass: [''],
+      understandable_objective: [],
+      personal_objective:[],
+      realizable_objective: [],
+      ambitious_objective:[],
+      mesurable_action: [],
+      ecological_action: [],            
     })
   }
   get f() { return this.objectiveForm.controls; }

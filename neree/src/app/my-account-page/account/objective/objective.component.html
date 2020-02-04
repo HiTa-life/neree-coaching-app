@@ -5,17 +5,9 @@
     <form [formGroup]="objectiveForm" (ngSubmit)="onSubmit()">
       <div class="form-row">
         <div class="form-group col">
-          <div class="form-group">
-            <label style="margin-right: 5px">Numéro</label>
-            <input type="text" class="form-control" formControlName="num"
-              [ngClass]="{ 'is-invalid': submitted && f.num.errors }" />
-            <div *ngIf="submitted && f.num.errors" class="invalid-feedback">
-              <div *ngIf="f.num.errors.required">Champs obligatoire</div>
-            </div>
-          </div>
 
           <div class="form-group">
-            <label style="margin-right: 5px">Titre de l'objectif</label>
+            <label style="margin-right: 5px">Objectif :</label>
             <input type="text" class="form-control" formControlName="objective_title"
               [ngClass]="{ 'is-invalid': submitted && f.objective_title.errors }" />
             <div *ngIf="submitted && f.objective_title.errors" class="invalid-feedback">
@@ -25,14 +17,7 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label style="margin-right: 5px">Description</label>
-        <input type="tel" class="form-control" formControlName="description"
-          [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
-        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-          <div *ngIf="f.description.errors.required">Champs obligatoire</div>
-        </div>
-      </div>
+     
 
       <div class="form-group">
         <label style="margin-right: 5px">Date de début</label>
@@ -43,41 +28,26 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label style="margin-right: 5px">Estimation de la date de fin</label>
-        <input type="date" class="form-control" formControlName="end_date"/>
-      </div>
+      
+      <p>Validation de mon objectif :</p>
+      <div>
+        <input type="checkbox"  name="understandable_objective" value="understandable_objective" formControlName="understandable_objective">
+        <label>Compréhensible</label>
 
-      <div class="form-group">
-        <label style="margin-right: 5px">Quel est le titre de sa valeur énergie ?
-          <a href="account/strength">Mes valeurs énergie</a>
-        </label>
-        <input type="text" class="form-control" formControlName="strength_title"
-          [ngClass]="{ 'is-invalid': submitted && f.strength_title.errors }" />
-        <div *ngIf="submitted && f.strength_title.errors" class="invalid-feedback">
-          <div *ngIf="f.strength_title.errors.required">Champs obligatoire</div>
-        </div>
-      </div>
+        <input type="checkbox"  name="personal_objective" value="personal_objective" formControlName="personal_objective">
+        <label >Personnel</label>
 
-      <div class="form-group">
-        <label style="margin-right: 5px">Quel est le titre de son plan d'actions ?
-          <a href="account/action-plan">Mon Plan d'Actions</a>
-        </label>
-        <input type="text" class="form-control" formControlName="action_plan_title"
-          [ngClass]="{ 'is-invalid': submitted && f.action_plan_title.errors }" />
-        <div *ngIf="submitted && f.action_plan_title.errors" class="invalid-feedback">
-          <div *ngIf="f.action_plan_title.errors.required">Champs obligatoire</div>
-        </div>
-      </div>
+        <input type="checkbox"  name="realizable_objective" value="realizable_objective" formControlName="realizable_objective">
+        <label>Reéaliste</label>
 
-      <div class="form-group">
-        <label style="margin-right: 5px">Quels sont les obstacles possibles pouvant freiner cet objectifs ?</label>
-        <input type="text" class="form-control" formControlName="obstacles">
-      </div>
+        <input type="checkbox"  name="ambitious_objective" value="ambitious_objective" formControlName="ambitious_objective">
+        <label>Ambitieux</label>
 
-      <div class="form-group">
-        <label style="margin-right: 5px">Comment vais-je les contourner ? </label>
-        <input type="text" class="form-control" formControlName="bypass">
+        <input type="checkbox"  name="mesurable_action" value="mesurable_action" formControlName="mesurable_action">
+        <label>Mesurable</label>
+
+        <input type="checkbox"  name="ecological_action" value="ecological_action" formControlName="ecological_action">
+        <label>Ecologique</label>
       </div>
 
       <div class="buttons" style="margin-left:200px">
