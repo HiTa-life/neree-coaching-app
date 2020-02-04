@@ -4,17 +4,17 @@
 }
 
 .card-body{
-    display: inline-flex;
+   margin:auto;
     width: 600px;
     height: 500 px;
     background-color: rgb(233,78,27);
-    margin-left:600px;
     padding : 10px;
     border:solid 1px black;
 }
 
 .form-group {
-    margin:10px;
+    margin:auto;
+    padding: 5px;
     font-weight: bold;
     text-align: center;
 }
@@ -39,8 +39,7 @@
 .return-button{
     height: 50px;
     width: 150px;
-    margin-bottom: 100px;
-    margin-left: 900px;
+    margin:auto;
     border-radius: 5px;
     border: solid 1px rgb(233,78,27);
     background-color: rgb(233,78,27);

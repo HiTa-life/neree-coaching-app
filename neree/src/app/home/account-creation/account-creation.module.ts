@@ -9,6 +9,7 @@ import { FooterModule } from '../../shared/components/footer/footer/footer.modul
 
 
 
+
 @NgModule({
   declarations: [
     AccountCreationComponent
@@ -19,7 +20,8 @@ import { FooterModule } from '../../shared/components/footer/footer/footer.modul
     ReactiveFormsModule,
     HeaderModule,
     FooterModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
+  
 })
 export class AccountCreationModule { }

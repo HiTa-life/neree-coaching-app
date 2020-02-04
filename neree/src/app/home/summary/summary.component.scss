@@ -2,27 +2,26 @@
     float: left;
     background-color: #006c8c;
     color: white;
-    position: relative;
+   margin:auto;
     bottom : 20px;
-    margin:auto
-    
+    padding:5px
+  
+    }
 
-}
+    .summary{
+      width: 500px;
+      height: auto;
+    }
 
   ion-card{
+    margin:auto;
       width : 500px;
       height:600px;
       color:white
       
   }
 
-  .scroller{
-    width: 300px;
-    height: 100px;
-    overflow-y: scroll;
-    scrollbar-color: white green;
-    scrollbar-width: thin;
-  }
+
 
   ion-card-title {
 color:white;
@@ -38,6 +37,5 @@ font-weight: bold;
 	font:bold 12px Verdana;
   padding:6px 6px 6px 6px;
   margin : 5px 5px 5px 5px;  
-  position: absolute;
   left:200px
   }

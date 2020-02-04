@@ -13,7 +13,6 @@
               <div *ngIf="f.name.errors.required">Champs obligatoire</div>
             </div>
           </div>
-
           <div class="form-group">
             <label style="margin-right: 5px">Prénom</label>
             <input type="text" class="form-control" formControlName="surname"
@@ -24,7 +23,6 @@
           </div>
         </div>
       </div>
-
       <div class="form-group form-check" style="margin-right: 5px">
         <input style="margin-right: 5px" type="radio" formControlName="role" name="role"
           class="form-radio-input" value="coachée" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
@@ -43,7 +41,6 @@
           <div *ngIf="f.phone.errors.required">Champs obligatoire</div>
         </div>
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Mail</label>
         <input type="text" class="form-control" formControlName="email"
@@ -53,7 +50,6 @@
           <div *ngIf="f.email.errors.email">Email doit être une adresse mail valide</div>
         </div>
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Fonction</label>
         <input type="text" class="form-control" formControlName="function"
@@ -62,7 +58,6 @@
           <div *ngIf="f.function.errors.required">Champs obligatoire</div>
         </div>
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Nom de la société</label>
         <input type="text" class="form-control" formControlName="name_society"
@@ -71,27 +66,22 @@
           <div *ngIf="f.name_society.errors.required">Champs obligatoire</div>
         </div>
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Adresse de la société</label>
         <input type="text" class="form-control" formControlName="address_society">
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Téléphone de la société</label>
         <input type="tel" class="form-control" formControlName="phone_society">
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Suivi part (Nom du coach)</label>
         <input type="text" class="form-control" formControlName="coach_name">
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Date de début de la formation</label>
         <input type="date" class="form-control" formControlName="coaching_beginning">
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Mot de passe</label>
         <input type="password" class="form-control" formControlName="password"
@@ -101,7 +91,6 @@
           <div *ngIf="f.password.errors.minlength">Le mot de passe doit contenir au moins 6 caractères</div>
         </div>
       </div>
-
       <div class="form-group">
         <label style="margin-right: 5px">Confirmation du mot de passe</label>
         <input type="password" class="form-control" formControlName="confirm_password"
@@ -111,7 +100,6 @@
           <div *ngIf="f.confirm_password.errors.minlength">Le mot de passe doit correspondre</div>
         </div>
       </div>
-
       <div class="form-group form-check" style="margin-right: 5px">
         <input style="margin-right: 5px" type="checkbox" formControlName="acceptTerms" id="accept_terms"
           class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.accept_terms.errors }" />
@@ -120,21 +108,14 @@
           Nérée-Coaching le temps de l'exécution de mon plan d'actions</label>
         <div *ngIf="submitted && f.accept_terms.errors" class="invalid-feedback">Confirmation obligatoire</div>
       </div>
-
       <div class="buttons" style="margin-left:200px">
         <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
       </div>
-
-
     </form>
   </div>
 </div>
-
 <pre>{{ accountForm.value | json }}</pre>
-
 <button type="button" class="return-button"><a href="/home"
     style="color: white; text-decoration: none; font-weight: bold;">Retour à la page d'accueil</a></button>
-
-
 <app-footer></app-footer>

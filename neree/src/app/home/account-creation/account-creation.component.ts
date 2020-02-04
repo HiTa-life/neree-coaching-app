@@ -10,8 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AccountCreationComponent implements OnInit {
   accountForm: FormGroup;
   submitted = false;
+ 
 
-  constructor(private formb: FormBuilder) { }
+  constructor(
+    private formb: FormBuilder) { }
 
   ngOnInit() {
     this.accountForm = this.formb.group({
@@ -46,12 +48,14 @@ export class AccountCreationComponent implements OnInit {
 
       // display form values on success
       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.accountForm.value, null, 4));
-  }
+    
+    }
 
   onReset() {
       this.submitted = false;
       this.accountForm.reset();
   }
+
 
 }
 // custom validator to check that two fields match
@@ -73,3 +77,8 @@ export function MustMatch(controlName: string, matchingControlName: string) {
     }
   }
 }
+
+
+
+
+

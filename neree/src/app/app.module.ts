@@ -13,6 +13,10 @@ import { SharedModule } from './shared/modules/shared/shared.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountModule } from './my-account-page/account/account.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpErrorHandler } from './http-error-handler.service';
+import { MessageService } from './message.service';
+
 
 
 @NgModule({
@@ -24,6 +28,7 @@ import { AccountModule } from './my-account-page/account/account.module';
 
   imports: [
     BrowserModule,
+    HttpClientModule,
     HomePageModule,
     AccountModule,
     SharedModule,
@@ -32,6 +37,8 @@ import { AccountModule } from './my-account-page/account/account.module';
     AppRoutingModule, 
     ],
   providers: [
+    HttpErrorHandler,
+    MessageService,
     StatusBar,
     SplashScreen,
     { 

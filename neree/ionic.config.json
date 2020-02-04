@@ -1,5 +1,9 @@
 {
   "name": "neree",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "showUserUrl" : "/neree_coaching_app/user/showAll",
+  "addUserUrl" : "/neree_coaching_app/user/new",
+  "deleteUserUrl": "/neree_coaching_app/user/delete/{id}",
+  "updateUserUrl": "/neree_coaching_app/user/edit/{id}"
 }
