@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/modules/shared/shared.module';
 import { HeaderModule } from '../../shared/components/header/header/header.module';
 import { FooterModule } from '../../shared/components/footer/footer/footer.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,6 +16,7 @@ import { FooterModule } from '../../shared/components/footer/footer/footer.modul
     AccountCreationComponent
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     AccountCreationRoutingModule,
     ReactiveFormsModule,

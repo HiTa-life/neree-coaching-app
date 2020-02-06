@@ -11,6 +11,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "angular5-toaster": "^1.0.2",
+    "gradle": "^1.0.9",
     "ionic": "^5.4.15"
   }
 }

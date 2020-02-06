@@ -30,7 +30,7 @@
         <input style="margin-right: 5px" type="radio" formControlName="role" name="role"
         class="form-radio-input" value="coach" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
         <label style="margin-right: 5px" for="coach" class="form-check-label">coach</label>
-        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Confirmation obligatoire</div>
+        <div *ngIf="submitted && f.role.errors" class="invalid-feedback">Confirmation obligatoire</div>
       </div>
 
       <div class="form-group">
@@ -101,7 +101,7 @@
         </div>
       </div>
       <div class="form-group form-check" style="margin-right: 5px">
-        <input style="margin-right: 5px" type="checkbox" formControlName="acceptTerms" id="accept_terms"
+        <input style="margin-right: 5px" type="checkbox" formControlName="accept_terms" id="accept_terms"
           class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.accept_terms.errors }" />
         <label style="margin-right: 5px" for="accept_terms" class="form-check-label">J'accepte que mes données soient
           transférées à
@@ -109,7 +109,8 @@
         <div *ngIf="submitted && f.accept_terms.errors" class="invalid-feedback">Confirmation obligatoire</div>
       </div>
       <div class="buttons" style="margin-left:200px">
-        <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
+        <button class="submit-button" (click)="addUser()" style="margin:20px">Soumettre</button>
+        <button class="submit-button" (click)="getUsers()" style="margin:20px">voir</button>
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
       </div>
     </form>
