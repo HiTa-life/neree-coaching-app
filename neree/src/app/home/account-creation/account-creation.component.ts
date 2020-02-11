@@ -15,7 +15,7 @@ export class AccountCreationComponent implements OnInit {
   submitted = false;
 
   user: User[] = [];
-  headers: string[];
+  // headers: string[];
   spresp: any;
   postdata: User;
   data: User;
@@ -82,7 +82,7 @@ export class AccountCreationComponent implements OnInit {
     });
   }
 
-  deleteUser(id: any){
+  deleteUser(id: string){
     this.userService
     .deleteUser(id)
     .subscribe(resp => {
@@ -90,7 +90,7 @@ export class AccountCreationComponent implements OnInit {
     });
   }
   
-  getUserById(id: any){
+  getUserById(id: string){
     this.userService.getUserById(id)
     .subscribe(data => {
       console.log(data);

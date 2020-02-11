@@ -28,11 +28,11 @@ export class UserService {
       );
   }
 
-  deleteUser(id: any): Observable<User> {
+  deleteUser(id: string): Observable<User> {
     return this.http.delete<User>(localUrl + id);
   }
 
-  getUserById(id: any): Observable<any> {
+  getUserById(id: string): Observable<any> {
     return this.http.get<User>(localUrl + id)
     .pipe(
       retry(3), catchError(this.handleError<User>('getUser'))

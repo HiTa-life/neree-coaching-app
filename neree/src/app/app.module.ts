@@ -14,8 +14,8 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountModule } from './my-account-page/account/account.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpErrorHandler } from './http-error-handler.service';
-import { MessageService } from './message.service';
+import { HttpErrorHandler } from './services/http-error-handler.service';
+import { MessageService } from './services/message.service';
 
 
 
