@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from './user.service';
 import { User } from './user';
@@ -20,10 +20,15 @@ export class AccountCreationComponent implements OnInit {
   spresp: any;
   postdata: User;
   data: User;
+  isLoading: boolean = false;  
+  errors: string = '';
 
   constructor(
     private formb: FormBuilder,
     private userService: UserService) { }
+
+    @Output()
+    userAdded: EventEmitter<User> = new EventEmitter<User>();
 
   ngOnInit() {
     this.accountForm = this.formb.group({
@@ -60,7 +65,7 @@ export class AccountCreationComponent implements OnInit {
     // display form values on success
     alert('SUCCESS!! :-)\n\n' 
     + JSON.stringify(this.accountForm.value, null, 4));
-    this.addUser();
+    this.addUsers(this.user);
 
   }
 
@@ -81,29 +86,49 @@ export class AccountCreationComponent implements OnInit {
        );
 }
 
-  addUser(){
+  addUsers(user){
+    this.isLoading = true;
     this.userService
-    .addUser(this.postdata)
-    .subscribe(resp => {
-      return this.spresp.push(resp);
-    });
-  }
-
-  deleteUser(id: string){
-    this.userService
-    .deleteUser(id)
-    .subscribe(resp => {
-      return this.spresp.push(resp);
-    });
-  }
-  
-  getUserById(id: string){
-    this.userService.getUserById(id)
-    .subscribe(data => {
-      console.log(data);
-    });
+    .postUser(user)
+    .subscribe(
+      user => {
+        this.isLoading = false;
+        user.isUpdating = false;
+        this.userAdded.emit(user);
+      },
+      error => {        
+        this.errors = error.json().errors;
+        this.isLoading = false;
+        console.log(user);
+      }
+    )
   }
 }
+
+
+
+
+   // .postUser(this.postdata)
+   // .subscribe(resp => {
+   //   return this.spresp.push(resp);
+  //  });
+ // }
+
+ // deleteUser(id: number){
+  //  this.userService
+  //  .deleteUser(id)
+   // .subscribe(resp => {
+   ////   return this.spresp.push(resp);
+   // });
+ // }
+  
+ // getUserById(id: number){
+ //   this.userService.getUserById(id)
+  //  .subscribe(data => {
+  //    console.log(data);
+//    });
+//  }
+
 
         // for (const d of (data as any)){
         //     this.user.push({

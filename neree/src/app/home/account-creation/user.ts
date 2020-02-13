@@ -1,5 +1,5 @@
 export interface User{
-    id: string;
+    id: number;
     name: string;
     surname: string;
     phone: string;
@@ -13,5 +13,6 @@ export interface User{
     password: string;
     confirmPassword: string;
     acceptTerms: boolean;
-    role: string
+    role: string;
+    isUpdating: boolean
 }

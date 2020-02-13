@@ -3,7 +3,7 @@
   <h3 class="card-header">Mes Valeurs Energie</h3>
   <div class="card-body">
 
-    <form [formGroup]="strengthForm" (ngSubmit)="energyValue()">
+    <form action="http://localhost:8000/user/energy/values/creation/new" method="POST"[formGroup]="strengthForm" (ngSubmit)="addStrength()">
       <div class="form-group">
         <label style="margin-right: 5px">Valeur</label>
         <input type="text" class="form-control" formControlName="strength_name">
@@ -45,9 +45,10 @@
       </div>
 
       <div class="buttons" style="margin-left:120px">
-        <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
+        <button class="submit-button" (click)="addStrength()" style="margin:20px">Soumettre</button>
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
         <button class="submit-button" (click)="onSubmit()">Mettre à jour</button>
+        <button class="submit-button" (click)="getStrengths()" style="margin:20px">voir</button>
       </div>
     </form>
   </div>

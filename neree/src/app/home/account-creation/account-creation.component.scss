@@ -1,12 +1,13 @@
 .card-header{
     text-align: center;
     font-weight: bold;
+    margin:auto;
+    padding : 20px
 }
 
 .card-body{
-   margin:auto;
     width: 600px;
-    height: 300 px;
+    height: 150 px;
     background-color: rgb(233,78,27);
     padding : 10px;
     border:solid 1px black;

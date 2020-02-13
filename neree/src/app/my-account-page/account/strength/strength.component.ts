@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { Strength } from './strength';
+import { StrengthService } from './strength.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-strength',
@@ -9,8 +12,16 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class StrengthComponent implements OnInit {
   strengthForm: FormGroup;
   submitted = false;
+  errorMessage: string;
 
-  constructor(private formb: FormBuilder) { }
+  strength: Strength[] =[];
+  spresp: any;
+  postdata: Strength;
+  data: Strength;
+
+  constructor(private formb: FormBuilder,
+    private strengthService: StrengthService, 
+    private http: HttpClient) { }
 
   ngOnInit() {
     this.strengthForm = this.formb.group({
@@ -41,6 +52,28 @@ export class StrengthComponent implements OnInit {
 onReset() {
     this.submitted = false;
     this.strengthForm.reset();
+}
+
+getStrengths(){
+  this.strengthService
+  .getStrength()
+  .subscribe(
+    strengths => {
+      this.strength = strengths;
+      console.log(strengths)
+    },
+    error => this.errorMessage = <any>error
+  );
+}
+
+addStrength(strength){
+this.submitted = true;
+   const formData = JSON.stringify(this.strengthForm.value);
+   this.http.post('http://localhost:8000/user/energy/values/creation/new', 
+   formData)
+ .subscribe(
+formData => this.strength.push(this.strengthForm.value))
+   console.log(formData)
 }
 
 }

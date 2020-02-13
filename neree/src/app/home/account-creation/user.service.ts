@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { User } from './user';
 import { Observable, of} from 'rxjs';
 import { catchError, retry} from 'rxjs/operators';
@@ -32,34 +32,40 @@ export class UserService {
     }));
   }
 
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(
+  postUser(user: User): Observable<User> {
+    return this.http.post(
       localUrlPost, user)
-      .pipe (
-        catchError(this.handleError('addUser', user))
-      );
-  }
+       .pipe(map((res: { json: () => any; })=> {
+        let modifiedResult = res.json();
+        modifiedResult = modifiedResult.map(function(user){
+          user.isUpdating = false;
+          return user;
+        });
+        return modifiedResult
+      }));
 
-  deleteUser(id: string): Observable<User> {
-    return this.http.delete<User>(localUrl + id);
-  }
+  // deleteUser(id: string): Observable<User> {
+  //   return this.http.delete<User>(localUrl + id);
+  // }
 
-  getUserById(id: string): Observable<any> {
-    return this.http.get<User>(localUrlShow + id)
-    .pipe(
-      retry(3), catchError(this.handleError<User>('getUser'))
-    );
-  }
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      this.log(`${operation} failed: ${error.message}`);
+  // getUserById(id: string): Observable<any> {
+  //   return this.http.get<User>(localUrlShow + id)
+  //   .pipe(
+  //     retry(3), catchError(this.handleError<User>('getUser'))
+  //   );
+  // }
   
-      return of(result as T);
-    };
-  }
+  // private handleError<T>(operation = 'operation', result?: T) {
+  //   return (error: any): Observable<T> => {
+  //     console.error(error);
+  //     this.log(`${operation} failed: ${error.message}`);
   
-  private log(message: string) {
-    console.log(message);
+  //     return of(result as T);
+  //   };
+  // }
+  
+  // private log(message: string) {
+  //   console.log(message);
+  // }
+    }
   }
-}

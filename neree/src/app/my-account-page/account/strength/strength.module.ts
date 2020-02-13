@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 import { SharedAccountModule } from '../shared/module/shared-account.module';
 import { StrengthComponent } from './strength.component';
 import { StrengthRoutingModule } from './strength-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,6 +15,7 @@ import { StrengthRoutingModule } from './strength-routing.module';
     StrengthComponent
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
     SharedModule, 
