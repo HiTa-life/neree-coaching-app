@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4f17eb0-5773-4a30-9f4e-6b04ebfff150" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/neree/ionic.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/neree/ionic.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neree/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/neree/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neree/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/neree/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/neree/src/app/home/account-creation/account-creation.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neree/src/app/home/account-creation/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/neree/src/app/home/account-creation/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,19 +25,6 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/neree/src/app/home/home.page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -51,30 +36,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="868" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectId" id="1XLwcSyHTfcdsMvLzmbInQh2H2Z" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="neree-coaching-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neree-coaching-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -83,8 +54,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,13 +95,15 @@
       <updated>1580838761087</updated>
       <workItem from="1580838763102" duration="26000" />
       <workItem from="1580838797658" duration="18000" />
+      <workItem from="1581422074971" duration="7000" />
+      <workItem from="1581422102758" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="868" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32905984" />
+      <window_info id="Project" />
       <window_info id="Structure" side_tool="true" />
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -138,7 +113,7 @@
       <window_info id="Captures" order="0" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32932165" />
+      <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Theme Preview" />
@@ -153,14 +128,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="267" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580838813848" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/neree/src/app/home/home.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

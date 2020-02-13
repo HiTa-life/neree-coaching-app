@@ -3,8 +3,10 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { User } from './user';
 import { Observable, of} from 'rxjs';
 import { catchError, retry} from 'rxjs/operators';
+import { map } from "rxjs/operators";
 
 const localUrl = "http://localhost:8000/user/account/creation/";
+const localUrlShow = "http://localhost:8000/user/account/creation/show"
 const localUrlPost = "http://localhost:8000/user/account/creation/new"
 
 @Injectable({
@@ -12,12 +14,22 @@ const localUrlPost = "http://localhost:8000/user/account/creation/new"
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    
+   }
 
-  getUser(): Observable<HttpResponse<User[]>> {
-    return this.http.get<User[]>(
-      localUrl, { observe: 'response' }
-    );
+  getUser(): Observable<User[]> {
+    return this.http.get(
+      localUrl
+    )
+    .pipe(map((res: { json: () => any; })=> {
+      let modifiedResult = res.json();
+      modifiedResult = modifiedResult.map(function(user){
+        user.isUpdating = false;
+        return user;
+      });
+      return modifiedResult
+    }));
   }
 
   addUser(user: User): Observable<User> {
@@ -33,7 +45,7 @@ export class UserService {
   }
 
   getUserById(id: string): Observable<any> {
-    return this.http.get<User>(localUrl + id)
+    return this.http.get<User>(localUrlShow + id)
     .pipe(
       retry(3), catchError(this.handleError<User>('getUser'))
     );

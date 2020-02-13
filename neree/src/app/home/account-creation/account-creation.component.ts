@@ -13,6 +13,7 @@ import { User } from './user';
 export class AccountCreationComponent implements OnInit {
   accountForm: FormGroup;
   submitted = false;
+  errorMessage: string;
 
   user: User[] = [];
   // headers: string[];
@@ -57,7 +58,8 @@ export class AccountCreationComponent implements OnInit {
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.accountForm.value, null, 4));
+    alert('SUCCESS!! :-)\n\n' 
+    + JSON.stringify(this.accountForm.value, null, 4));
     this.addUser();
 
   }
@@ -68,11 +70,16 @@ export class AccountCreationComponent implements OnInit {
   }
 
   getUsers() {
-    this.userService.getUser()
-     .subscribe(data => {
-       console.log(data);
-     });
-  }
+    this.userService
+    .getUser()
+     .subscribe(
+       users => {
+         this.user = users;
+         console.log(users)
+       },
+       error => this.errorMessage = <any>error
+       );
+}
 
   addUser(){
     this.userService
@@ -97,6 +104,7 @@ export class AccountCreationComponent implements OnInit {
     });
   }
 }
+
         // for (const d of (data as any)){
         //     this.user.push({
         //       name: d.name,
