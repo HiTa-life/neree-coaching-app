@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from './user.service';
 import { User } from './user';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -20,21 +21,22 @@ export class AccountCreationComponent implements OnInit {
   spresp: any;
   postdata: User;
   data: User;
-  isLoading: boolean = false;  
+  isLoading: boolean = false;
   errors: string = '';
 
   constructor(
     private formb: FormBuilder,
-    private userService: UserService) { }
+    private userService: UserService, 
+    private http: HttpClient) { }
 
-    @Output()
-    userAdded: EventEmitter<User> = new EventEmitter<User>();
+  @Output()
+  userAdded: EventEmitter<User> = new EventEmitter<User>();
 
   ngOnInit() {
     this.accountForm = this.formb.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
-      role: ['', Validators.required],
+      // role: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required, Validators.email],
       function: ['', Validators.required],
@@ -63,8 +65,8 @@ export class AccountCreationComponent implements OnInit {
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' 
-    + JSON.stringify(this.accountForm.value, null, 4));
+    alert('SUCCESS!! :-)\n\n'
+      + JSON.stringify(this.accountForm.value, null, 4));
     this.addUsers(this.user);
 
   }
@@ -76,33 +78,43 @@ export class AccountCreationComponent implements OnInit {
 
   getUsers() {
     this.userService
-    .getUser()
-     .subscribe(
-       users => {
-         this.user = users;
-         console.log(users)
-       },
-       error => this.errorMessage = <any>error
-       );
-}
+      .getUser()
+      .subscribe(
+        users => {
+          this.user = users;
+          console.log(users)
+        },
+        error => this.errorMessage = <any>error
+      );
+  }
 
-  addUsers(user){
+  addUsers(user) {
     this.isLoading = true;
     this.userService
-    .postUser(user)
-    .subscribe(
-      user => {
-        this.isLoading = false;
-        user.isUpdating = false;
-        this.userAdded.emit(user);
-      },
-      error => {        
-        this.errors = error.json().errors;
-        this.isLoading = false;
-        console.log(user);
-      }
-    )
+      .postUser(user)
+      .subscribe(
+        user => {
+          this.isLoading = false;
+          user.isUpdating = false;
+          this.userAdded.emit(user);
+        },
+        error => {
+          this.errors = error.json().errors;
+          this.isLoading = false;
+          console.log(user);
+        }
+      )
   }
+
+  addUser(user){
+    this.submitted = true;
+       const formData = JSON.stringify(this.accountForm.value);
+       this.http.post('http://localhost:8000/user/account/creation/new', 
+       formData)
+     .subscribe(
+    formData => this.user.push(this.accountForm.value))
+       console.log(formData)
+    }
 }
 
 
@@ -121,7 +133,7 @@ export class AccountCreationComponent implements OnInit {
    ////   return this.spresp.push(resp);
    // });
  // }
-  
+
  // getUserById(id: number){
  //   this.userService.getUserById(id)
   //  .subscribe(data => {

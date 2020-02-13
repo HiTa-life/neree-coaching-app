@@ -5,14 +5,14 @@ export interface User{
     phone: string;
     email: string;
     function: string;
-    nameSociety: string;
-    addressSociety: string;
-    phoneSociety: string;
-    coachName: string;
-    coachingBeginning: Date;
+    name_society: string;
+    address_society: string;
+    phone_society: string;
+    coach_name: string;
+    coaching_beginning: string;
     password: string;
-    confirmPassword: string;
-    acceptTerms: boolean;
-    role: string;
+    confirm_password: string;
+    accept_terms: boolean;
+    // role: string;
     isUpdating: boolean
 }
