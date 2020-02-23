@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from './user.service';
 import { User } from './user';
 import { HttpClient } from '@angular/common/http';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,14 +28,21 @@ export class AccountCreationComponent implements OnInit {
 
   constructor(
     private formb: FormBuilder,
+    private router: Router,
     private userService: UserService, 
-    private http: HttpClient) { }
+    private authenticationService: AuthenticationService,
+    private http: HttpClient) 
+
+    { if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/']);
+  }}
 
   @Output()
   userAdded: EventEmitter<User> = new EventEmitter<User>();
 
   ngOnInit() {
     this.accountForm = this.formb.group({
+      username: ['', Validators.required],
       name: ['', Validators.required],
       surname: ['', Validators.required],
       // role: ['', Validators.required],
@@ -115,6 +124,16 @@ export class AccountCreationComponent implements OnInit {
     formData => this.user.push(this.accountForm.value))
        console.log(formData)
     }
+
+    editUser(){
+      this.submitted = true;
+         const formData = JSON.stringify(this.accountForm.value);
+         this.http.put('http://localhost:8000/user/account/creation/{id}/edit', 
+         formData)
+       .subscribe(
+      formData => this.user.push(this.accountForm.value))
+         console.log(formData)
+      }
 }
 
 

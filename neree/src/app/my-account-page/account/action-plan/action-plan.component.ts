@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { ActionPlan } from './action-plan';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-action-plan',
@@ -10,8 +12,15 @@ export class ActionPlanComponent implements OnInit {
 
   actionPlanForm: FormGroup;
   submitted = false; //comportement par défaut de la variable submitted
+  errorMessage: string;
 
-  constructor(private formb: FormBuilder) { }
+  actionPlan : ActionPlan[] = [];
+  spresp: any;
+  postdata: ActionPlan;
+  data: ActionPlan;
+
+  constructor(private formb: FormBuilder, 
+    private http: HttpClient) { }
 
   ngOnInit() {
     this.actionPlanForm = this.formb.group({
@@ -54,4 +63,15 @@ onReset() {
     this.submitted = false;
     this.actionPlanForm.reset();
 }
+
+addActionPlan(actionPlan){
+  this.submitted = true;
+     const formData = JSON.stringify(this.actionPlanForm.value);
+     this.http.post('http://localhost:8000/user/action/plan/creation/new', 
+     formData)
+   .subscribe(
+  formData => this.actionPlan.push(this.actionPlanForm.value))
+     console.log(formData)
+  }
+  
 }

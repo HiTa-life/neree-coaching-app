@@ -9,6 +9,7 @@ import { ActionPlanModule } from './action-plan/action-plan.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ObjectiveModule } from './objective/objective.module';
 import { CalendarModule } from './calendar/calendar.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CalendarModule } from './calendar/calendar.module';
     CalendarModule,
     ReactiveFormsModule,
     AccountRoutingModule,
+    AppRoutingModule
   ],
   exports:[
     StrengthModule,

@@ -3,7 +3,7 @@
   <h3 class="card-header">Mon Plan d'Actions</h3>
   <div class="card-body">
 
-    <form [formGroup]="actionPlanForm" (ngSubmit)="onSubmit()">
+    <form action="http://localhost:8000/user/action/plan/creation/new" method="POST" [formGroup]="actionPlanForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label style="margin-right: 5px">N° :</label>
         <input type="number" class="form-control" formControlName="num">
@@ -88,7 +88,7 @@
       </div>
 
       <div class="buttons" style="margin-left:120px">
-        <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
+        <button class="submit-button" (click)="addActionPlan()" style="margin:20px">Soumettre</button>
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
         <button class="submit-button" (click)="onSubmit()">Mettre à jour</button>
       </div>
@@ -97,6 +97,7 @@
 </div>
 
 <pre>{{ actionPlanForm.value | json }}</pre>
+
 <button type="button" class="return-button"><a href="/account"
     style="color: white; text-decoration: none; font-weight: bold;">Retour à la page Mon Compte</a></button>
 

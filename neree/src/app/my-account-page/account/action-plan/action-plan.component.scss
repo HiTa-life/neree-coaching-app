@@ -4,13 +4,12 @@
 }
 
 .card-body{
-    display: inline-flex;
     width: 600px;
-    height: 400 px;
+    height: 100 px;
     background-color: rgb(233,78,27);
-    margin-left:600px;
     padding : 10px;
     border:solid 1px black;
+    margin: auto
 }
 
 .form-group {

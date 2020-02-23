@@ -2,7 +2,7 @@
 <div class="card m-3">
   <h3 class="card-header">Mon Objectif</h3>
   <div class="card-body">
-    <form [formGroup]="objectiveForm" (ngSubmit)="onSubmit()">
+    <form action="http://localhost:8000/user/objective/creation/new" method="POST" [formGroup]="objectiveForm" (ngSubmit)="onSubmit()">
       <div class="form-row">
         <div class="form-group col">
 
@@ -51,7 +51,7 @@
       </div>
 
       <div class="buttons" style="margin-left:200px">
-        <button class="submit-button" (click)="onSubmit" style="margin:20px">Soumettre</button>
+        <button class="submit-button" (click)="addObjective()" style="margin:20px">Soumettre</button>
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
       </div>
 

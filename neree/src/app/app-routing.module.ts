@@ -10,7 +10,7 @@ import { LoginComponent } from './home/login/login.component';
 import { AccountCreationComponent } from './home/account-creation/account-creation.component';
 import { ObjectiveComponent } from './my-account-page/account/objective/objective.component';
 import { CalendarComponent } from './my-account-page/account/calendar/calendar.component';
-
+import { AuthGuard } from './helpers/auth.guard'
 
 const routes: Routes = [
   
@@ -21,7 +21,7 @@ const routes: Routes = [
     {path:'account/strength', component: StrengthComponent},
     {path:'account/objective', component: ObjectiveComponent},
     {path:'account/calendar', component: CalendarComponent},
-    { path: '', component: HomePage },
+    { path: '', component: HomePage, canActivate: [AuthGuard]  },
     {path: "**", component:PageNotFoundComponent}
   
 ];

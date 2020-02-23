@@ -1,7 +1,7 @@
 <app-header-account></app-header-account>
 <ion-router-outlet></ion-router-outlet>
 
-  <div text-center class="ion-padding">
+  <div class="ion-text-center">
     <h1>Nérée Coaching Application</h1>   
    </div>
 
@@ -16,6 +16,8 @@
 
     <button type="button" class="buttons"><a href="/account/calendar"
       style="color: white; text-decoration: none; ">Mon Calendrier</a></button>
+
+      <button class="submit-button" (click)=getUsers() style="margin:20px">voir</button>
 
   </div>
 <app-footer></app-footer>

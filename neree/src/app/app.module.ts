@@ -42,7 +42,7 @@ import { MessageService } from './services/message.service';
     StatusBar,
     SplashScreen,
     { 
-      provide: RouteReuseStrategy, 
+      provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy 
     }
   ],

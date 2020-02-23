@@ -48,10 +48,17 @@
         <button class="submit-button" (click)="addStrength()" style="margin:20px">Soumettre</button>
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
         <button class="submit-button" (click)="onSubmit()">Mettre à jour</button>
-        <button class="submit-button" (click)="getStrengths()" style="margin:20px">voir</button>
+        <button class="submit-button"  style="margin:20px"><a href="/account/strength/list">voir</a></button>
+        <!-- <button class="submit-button" (click)="getStrengths()" style="margin:20px"><a href="/list">voir</a></button> -->
       </div>
     </form>
   </div>
+</div>
+<div>
+  <p>
+   Valeur : <b>{{ strengthForm.value | json}}</b>
+  </p>
+
 </div>
 
 <pre>{{ strengthForm.value | json }}</pre>

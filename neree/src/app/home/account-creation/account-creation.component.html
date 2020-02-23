@@ -6,6 +6,14 @@
       <div class="form-row">
         <div class="form-group col">
           <div class="form-group">
+            <label style="margin-right: 5px">Identifiant</label>
+            <input type="text" class="form-control" formControlName="username"
+              [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Champs obligatoire</div>
+            </div>
+          </div>
+          <div class="form-group">
             <label style="margin-right: 5px">Nom</label>
             <input type="text" class="form-control" formControlName="name"
               [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
@@ -23,24 +31,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="form-group form-check" style="margin-right: 5px">
-        <input style="margin-right: 5px" type="radio" formControlName="role" name="role"
-          class="form-radio-input" value="coachée" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
-        <label style="margin-right: 5px" for="coachée" class="form-check-label">coaché(e)</label>
-        <input style="margin-right: 5px" type="radio" formControlName="role" name="role"
-        class="form-radio-input" value="coach" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
-        <label style="margin-right: 5px" for="coach" class="form-check-label">coach</label>
-        <div *ngIf="submitted && f.role.errors" class="invalid-feedback">Confirmation obligatoire</div>
-      </div> -->
-      <!-- <div class="form-group">
-        <label style="margin-right: 5px">Role</label>
-        <input type="text" class="form-control" formControlName="role"
-          [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
-        <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
-          <div *ngIf="f.role.errors.required">Champs obligatoire</div>
-        </div>
-      </div> -->
-      <div class="form-group">
+       <div class="form-group">
         <label style="margin-right: 5px">Téléphone</label>
         <input type="tel" class="form-control" formControlName="phone"
           [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
@@ -117,7 +108,8 @@
       </div>
       <div class="buttons" style="margin-left:200px">
         <button class="submit-button" (click)="addUser()" style="margin:20px">Soumettre</button>
-        <button class="submit-button" [class.is-loading]="isLoading" (click)="getUsers()" style="margin:20px">voir</button>
+        <button class="submit-button" [class.is-loading]="isLoading" (click)="getUsers()" style="margin:20px">voir</button>        
+        <button class="submit-button" [class.is-loading]="isLoading" (click)="editUser()" style="margin:20px">Mettre à jour</button>
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
       </div>
     </form>

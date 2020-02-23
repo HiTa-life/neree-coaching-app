@@ -1,5 +1,6 @@
 export interface User{
     id: number;
+    username:string;
     name: string;
     surname: string;
     phone: string;
@@ -10,9 +11,10 @@ export interface User{
     phone_society: string;
     coach_name: string;
     coaching_beginning: string;
-    password: string;
+    encode(password: string);
     confirm_password: string;
     accept_terms: boolean;
     // role: string;
-    isUpdating: boolean
+    isUpdating: boolean;
+    token: string;
 }
