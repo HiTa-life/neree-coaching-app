@@ -7,7 +7,8 @@ import { map } from "rxjs/operators";
 
 const localUrl = "http://localhost:8000/user/account/creation/";
 const localUrlShow = "http://localhost:8000/user/account/creation/show"
-const localUrlPost = "http://localhost:8000/user/account/creation/new"
+const localUrlPost = "http://localhost:8000/user/account/creation/new";
+const localUrlDelete = "http://localhost:8000/user/account/creation/delete/{id}"
 
 @Injectable({
   providedIn: 'root'
@@ -43,10 +44,12 @@ export class UserService {
         });
         return modifiedResult
       }));
+    }
 
-  // deleteUser(id: string): Observable<User> {
-  //   return this.http.delete<User>(localUrl + id);
-  // }
+  deleteUser(id: number): Observable<User> {
+    return this.http.delete<User>(localUrlDelete + id);
+  }
+}
 
   // getUserById(id: string): Observable<any> {
   //   return this.http.get<User>(localUrlShow + id)
@@ -67,5 +70,4 @@ export class UserService {
   // private log(message: string) {
   //   console.log(message);
   // }
-    }
-  }
+    

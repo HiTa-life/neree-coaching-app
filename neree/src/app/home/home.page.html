@@ -11,11 +11,17 @@
   <div class="home">
   <app-summary></app-summary>
   <app-team></app-team>
-</div>
+
 <div class="login" style="display:inline-block">
- 
+  <p *ngIf="hasAnyRole(['READ'])">
+    <a routerLink="/pageLecteur">Vous pouvez accèder à la page de lecture</a>
+  </p>
+  <p *ngIf="hasAnyRole(['WRITE'])">
+    <a routerLink="/pageRedacteur">Vous pouvez accèder à la page de rédaction</a>
+  </p>
  
   <!-- <a href="/login">Login</a> -->
+</div>
 </div>
 
 </ion-content>

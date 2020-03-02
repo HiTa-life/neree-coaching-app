@@ -1,5 +1,5 @@
 export interface Strength {
-    id: string;
+    id: number;
     strength_name: string;
     actually_notation: number;
     expected_notation: number;

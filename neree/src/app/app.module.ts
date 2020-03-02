@@ -16,6 +16,7 @@ import { AccountModule } from './my-account-page/account/account.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpErrorHandler } from './services/http-error-handler.service';
 import { MessageService } from './services/message.service';
+import { AuthService } from './services/auth/auth.service';
 
 
 
@@ -37,6 +38,7 @@ import { MessageService } from './services/message.service';
     AppRoutingModule, 
     ],
   providers: [
+    AuthService,
     HttpErrorHandler,
     MessageService,
     StatusBar,

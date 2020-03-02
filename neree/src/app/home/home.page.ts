@@ -4,6 +4,8 @@ import { first } from 'rxjs/operators';
 import { UserService } from './account-creation/user.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { User } from './account-creation/user';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
 
 
 @Component({
@@ -18,9 +20,22 @@ export class HomePage {
    
     private titleService: TitleService,
     private authenticationService: AuthenticationService,
-        private userService: UserService
+        private userService: UserService,
+        private router:Router,
+        private authService: AuthService
   ) { 
     this.currentUser = this.authenticationService.currentUserValue;
   }
 
+  hasAnyRole(roles: string[]) {
+    return this.authService.hasAnyRole(roles);
+  }
+
+  getLogin() {
+    return this.authService.getUser().login;
+  }
+
+  logout() {
+    return this.authService.logout();
+  }
 }

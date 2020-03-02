@@ -4,12 +4,15 @@
 }
 
 .card-body{
+    display: block;
+    position: relative;
     width: 600px;
-    height: 100 px;
+    height: 500 px;
     background-color: rgb(233,78,27);
     padding : 10px;
     border:solid 1px black;
-    margin: auto
+    margin: auto;
+
 }
 
 .form-group {

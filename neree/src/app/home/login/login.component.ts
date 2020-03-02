@@ -3,11 +3,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { first } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  providers:[AuthService]
 })
 
 export class LoginComponent implements OnInit {
@@ -16,13 +18,15 @@ export class LoginComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error: '';
-  
+  model: any = {};
+ // model: loginModel;
 
   constructor(
     private formb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService : AuthenticationService) {
+    private authenticationService : AuthenticationService,
+    private authService: AuthService) {
 
       if (this.authenticationService.currentUserValue) { 
         this.router.navigate(['/']);
@@ -68,6 +72,9 @@ export class LoginComponent implements OnInit {
 
     // display form values on success
     //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
+}
+login() {
+this.authService.login(this.model);
 }
 
 onReset() {

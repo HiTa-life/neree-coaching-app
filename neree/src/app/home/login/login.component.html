@@ -25,7 +25,7 @@
           <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Confirmation obligatoire</div>
         </div>
         <div class="buttons" style="margin-left:200px">
-          <button [disabled]="loading" class="submit-button" (click)="onSubmit()" style="margin:20px">Login</button>
+          <button [disabled]="loading" class="submit-button" (click)="login()" style="margin:20px">Login</button>
          
         <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
           <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>

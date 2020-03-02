@@ -8,9 +8,8 @@
 
           <div class="form-group">
             <label style="margin-right: 5px">Objectif :</label>
-            <input type="text" class="form-control" formControlName="objective_title"
-              [ngClass]="{ 'is-invalid': submitted && f.objective_title.errors }" />
-            <div *ngIf="submitted && f.objective_title.errors" class="invalid-feedback">
+            <textarea class="form-control" formControlName="objective_title" rows="5" cols="33" [ngClass]="{ 'is-invalid': submitted && f.objective_title.errors }"></textarea>
+                      <div *ngIf="submitted && f.objective_title.errors" class="invalid-feedback">
               <div *ngIf="f.objective_title.errors.required">Champs obligatoire</div>
             </div>
           </div>
@@ -20,7 +19,7 @@
      
 
       <div class="form-group">
-        <label style="margin-right: 5px">Date de début</label>
+        <label style="margin-right: 5px">Date de début :</label>
         <input type="date" class="form-control" formControlName="beginning_date"
           [ngClass]="{ 'is-invalid': submitted && f.beginning_date.errors }" />
         <div *ngIf="submitted && f.beginning_date.errors" class="invalid-feedback">
@@ -31,27 +30,28 @@
       
       <p>Validation de mon objectif :</p>
       <div>
-        <input type="checkbox"  name="understandable_objective" value="understandable_objective" formControlName="understandable_objective">
+        <input type="checkbox"  name="understandable_objective" value="understandable_objective" formControlName="understandable_objective" style="margin: 5px">
         <label>Compréhensible</label>
 
-        <input type="checkbox"  name="personal_objective" value="personal_objective" formControlName="personal_objective">
+        <input type="checkbox"  name="personal_objective" value="personal_objective" formControlName="personal_objective" style="margin: 5px">
         <label >Personnel</label>
 
-        <input type="checkbox"  name="realizable_objective" value="realizable_objective" formControlName="realizable_objective">
-        <label>Reéaliste</label>
+        <input type="checkbox"  name="realizable_objective" value="realizable_objective" formControlName="realizable_objective" style="margin: 5px">
+        <label>Réealiste</label>
 
-        <input type="checkbox"  name="ambitious_objective" value="ambitious_objective" formControlName="ambitious_objective">
+        <input type="checkbox"  name="ambitious_objective" value="ambitious_objective" formControlName="ambitious_objective" style="margin: 5px">
         <label>Ambitieux</label>
 
-        <input type="checkbox"  name="mesurable_action" value="mesurable_action" formControlName="mesurable_action">
+        <input type="checkbox"  name="mesurable_action" value="mesurable_action" formControlName="mesurable_action" style="margin: 5px">
         <label>Mesurable</label>
 
-        <input type="checkbox"  name="ecological_action" value="ecological_action" formControlName="ecological_action">
+        <input type="checkbox"  name="ecological_action" value="ecological_action" formControlName="ecological_action" style="margin: 5px">
         <label>Ecologique</label>
       </div>
 
       <div class="buttons" style="margin-left:200px">
-        <button class="submit-button" (click)="addObjective()" style="margin:20px">Soumettre</button>
+         <button class="submit-button" (click)="addObjective()" style="margin:20px">Soumettre</button>
+        <!-- <button class="submit-button" (click)="addObjective()" style="margin:20px"><a href="/account">Soumettre</a></button> -->
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
       </div>
 
@@ -59,7 +59,6 @@
   </div>
 </div>
 
-<pre>{{ objectiveForm.value | json }}</pre>
 
 <button type="button" class="return-button"><a href="/account"
     style="color: white; text-decoration: none; font-weight: bold;">Retour à la page Mon Compte</a></button>

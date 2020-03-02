@@ -25,6 +25,7 @@ export class AccountCreationComponent implements OnInit {
   data: User;
   isLoading: boolean = false;
   errors: string = '';
+  message : string;
 
   constructor(
     private formb: FormBuilder,
@@ -86,16 +87,19 @@ export class AccountCreationComponent implements OnInit {
   }
 
   getUsers() {
-    this.userService
-      .getUser()
-      .subscribe(
-        users => {
-          this.user = users;
-          console.log(users)
+   this.userService
+     .getUser()
+     .subscribe(
+       users => {
+         this.user = users;
+          console.log(users);
         },
         error => this.errorMessage = <any>error
       );
   }
+
+
+
 
   addUsers(user) {
     this.isLoading = true;
@@ -106,6 +110,7 @@ export class AccountCreationComponent implements OnInit {
           this.isLoading = false;
           user.isUpdating = false;
           this.userAdded.emit(user);
+          this.message = "Bravo ! Votre compte est créé !"
         },
         error => {
           this.errors = error.json().errors;
@@ -134,7 +139,7 @@ export class AccountCreationComponent implements OnInit {
       formData => this.user.push(this.accountForm.value))
          console.log(formData)
       }
-}
+
 
 
 
@@ -145,13 +150,14 @@ export class AccountCreationComponent implements OnInit {
   //  });
  // }
 
- // deleteUser(id: number){
-  //  this.userService
-  //  .deleteUser(id)
-   // .subscribe(resp => {
-   ////   return this.spresp.push(resp);
-   // });
- // }
+ deleteOneUser(id: number){
+   this.userService
+   .deleteUser(id)
+   .subscribe(resp => {
+      return this.spresp.push(resp);
+   });
+ }
+}
 
  // getUserById(id: number){
  //   this.userService.getUserById(id)

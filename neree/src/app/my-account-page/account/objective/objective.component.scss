@@ -1,20 +1,21 @@
 .card-header{
     text-align: center;
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .card-body{
-    display: inline-flex;
+   
     width: 600px;
     height: 500 px;
     background-color: rgb(233,78,27);
-    margin-left:600px;
-    padding : 10px;
     border:solid 1px black;
+    padding : 40px; 
+    margin: auto
 }
 
 .form-group {
-    margin:10px;
+    padding : 10px;
     font-weight: bold;
     text-align: center;
 }
@@ -40,8 +41,7 @@
 .return-button{
     height: 50px;
     width: 150px;
-    margin-bottom: 100px;
-    margin-left: 900px;
+  margin: auto;
     border-radius: 5px;
     border: solid 1px rgb(233,78,27);
     background-color: rgb(233,78,27);

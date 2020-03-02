@@ -2,15 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './account.component';
+import { AuthGuard } from 'src/app/services/auth/auth.guard';
+import { StrengthComponent } from './strength/strength.component';
 
 const routes: Routes = [
-  {path: "account", redirectTo: 'account'},
+  {path: "account", 
+canActivate: [AuthGuard],
+component: AccountComponent},
   {
     path: "account", component: AccountComponent,
     children: [
       {
-        path: "", loadChildren: () => import("./strength/strength.module")
-          .then((mod) => mod.StrengthModule)
+        path: 'strength', loadChildren: () => import("./strength/strength.module")
+          .then((mod) => mod.StrengthModule),
+          canActivate: [AuthGuard],
+          component: StrengthComponent
       },
       {
         path: "", loadChildren: () => import("./action-plan/action-plan.module")
@@ -36,6 +42,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  providers: [AuthGuard]
 })
 export class AccountRoutingModule { }

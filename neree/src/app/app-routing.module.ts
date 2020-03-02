@@ -22,7 +22,23 @@ const routes: Routes = [
     {path:'account/objective', component: ObjectiveComponent},
     {path:'account/calendar', component: CalendarComponent},
     { path: '', component: HomePage, canActivate: [AuthGuard]  },
-    {path: "**", component:PageNotFoundComponent}
+    {path: "**", component:PageNotFoundComponent},
+    {
+      path: 'account/action-plan',
+      canActivate: [AuthGuard],
+      component: ActionPlanComponent,
+      data: {
+        roles: ['READ']
+      }
+    },
+    {
+      path: 'account/objective',
+      canActivate: [AuthGuard],
+      component: ObjectiveComponent,
+      data: {
+        roles: ['WRITE']
+      }
+    }
   
 ];
 

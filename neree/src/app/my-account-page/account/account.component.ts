@@ -4,6 +4,7 @@ import { StrengthService } from './strength/strength.service';
 import { Strength } from './strength/strength';
 import { User } from 'src/app/home/account-creation/user';
 import { UserService } from 'src/app/home/account-creation/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -18,10 +19,21 @@ export class AccountComponent {
   constructor(
     private titleService: TitleService,
     private strengthService: StrengthService,
-    private userService: UserService
-  ) {
-   
-   }
+    private userService: UserService,
+    private router: Router
+  ) {}
+
+  getLogin() {
+    return JSON.parse(localStorage.getItem('user')).login;
+  }
+  
+  logout() {
+    console.log('Tentative de déconnexion');
+  
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
+  }
+  
    getStrengths(){
     this.strengthService
     .getStrength()

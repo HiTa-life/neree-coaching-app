@@ -6,7 +6,7 @@
       <div class="form-row">
         <div class="form-group col">
           <div class="form-group">
-            <label style="margin-right: 5px">Identifiant</label>
+            <label style="margin-right: 5px">Identifiant(nom d'utilisation)</label>
             <input type="text" class="form-control" formControlName="username"
               [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
@@ -108,14 +108,17 @@
       </div>
       <div class="buttons" style="margin-left:200px">
         <button class="submit-button" (click)="addUser()" style="margin:20px">Soumettre</button>
-        <button class="submit-button" [class.is-loading]="isLoading" (click)="getUsers()" style="margin:20px">voir</button>        
+        <button class="submit-button" [class.is-loading]="isLoading" (click)="getUsers()" style="margin:20px">Voir</button>        
         <button class="submit-button" [class.is-loading]="isLoading" (click)="editUser()" style="margin:20px">Mettre à jour</button>
+        <button class="submit-button" [class.is-loading]="isLoading" (click)="deleteOneUser()" style="margin:20px">Supprimer</button> 
         <button class="reset-button" type="reset" (click)="onReset()">Annuler</button>
       </div>
     </form>
   </div>
 </div>
-<pre>{{ accountForm.value | json }}</pre>
+
+<pre>{{ accountForm.value }}</pre>
 <button type="button" class="return-button"><a href="/home"
     style="color: white; text-decoration: none; font-weight: bold;">Retour à la page d'accueil</a></button>
+
 <app-footer></app-footer>
